@@ -1,6 +1,6 @@
 {
   "name": "b-library",
-  "version": "0.6.21",
+  "version": "0.6.22",
   "description": "Vue组件库,像搭积木一样定制您的网站",
   "main": "dist/brick-library.min.js",
   "scripts": {

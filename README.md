@@ -1,20 +1,23 @@
 <br/>
 
-![brick](http://r.photo.store.qq.com/psb?/V13wtei3333fhr/1iFgOZstVg3n05Fh5G5YQvD87yffY0sMwRdSFRT615c!/r/dNgAAAAAAAAA)
 
-_"Library 是 Brick 的衍生组件库"_
+![brick](https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/100ll.png)
+
+_'Library'is a library of derivative components of 'Brick'_
 
 [![NPM version](https://img.shields.io/npm/v/b-library.svg)](https://www.npmjs.com/package/b-library)
     
 <br/>
 
-#####_Library 依据程序员们常用的功能而制作了一整套功能类Vue组件库，无论是小到A,Button标签，还是大到带有router和动态效果的自动化HeadBar，或者是整个页面的模版，Library应有尽有。希望Library能为前端攻城狮们的工作带来一些便利_
-
->您可以访问以下网址来粗略预览旧版Library (部分组件有较大差异，但是总体思路是一致的)之后在正式版上线时会指向到Brick-Library的官方网站 
+_'Library'makes a whole set of functional class'Vue' component libraries based on the common functions of programmers, whether small to'A, Button'tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. I hope'Library'will bring some convenience to your work._
 
 
-> <a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
 
+> <a href="https://github.com/BobbleHatkjh/VUE-Brick">gitHub</a>  &emsp;&emsp;  <a href="https://www.npmjs.com/package/b-library">NPM</a>
+
+
+
+<br/>
 
 ``` 
 A            // √    
@@ -41,7 +44,7 @@ Theme Configuration       // 尚在准备
 
 <br/>
 
-###引入方式
+###introduction of <a style="color: #b96d27">import</a>
 
 >少量组件 推荐的引入的方式
 ```
@@ -125,9 +128,17 @@ Vue.component('Footer', Footer);
 
 <br/>
 
->！项目目前仍在开发阶段 目前很多组件的功能性还不完全，在进入1.0公开版本之后，demo以及api指南会同步上线Brick-Library的正式官网 
+> ! The project is still in the development stage and the functionality of many components is still incomplete. After entering the 1.0 public version, demo and API guides will be launched simultaneously on the official website of 'Brick'.
 
 <br/>
 
-其余部分组件的预览图:
-![Img](http://r.photo.store.qq.com/psb?/V13wtei3333fhr/6A4CrTF955V3S38ih8Teua0cQJ9twIZcpVTEwUUzLnk!/r/dLgAAAAAAAAA)
+>You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).
+
+
+> <a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
+
+
+<br/>
+
+Preview of the rest of the components:
+![Img](https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/preview.png)

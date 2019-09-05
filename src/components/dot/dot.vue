@@ -1,7 +1,9 @@
 <template>
 
     <div id="Dot" class="b_dot">
-        <a>{{dot__}}</a>
+        <div class="b_dot_slot">
+            <slot></slot>
+        </div>
     </div>
 
 </template>
@@ -10,7 +12,7 @@
 <script>
     export default {
         name: 'Dot',
-        props: ['dot__'],
+        props: [],
         data(){
             return{
 
@@ -44,7 +46,9 @@
         background-color: rgba($ThemeColor,0.9);
         box-shadow: 0 0 12px rgba($ThemeColor,0.9);
     }
-    .b_dot a{
+
+
+    .b_dot_slot{
         margin: auto;
         font-weight: bolder;
         font-size: 14px;

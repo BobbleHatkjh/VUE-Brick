@@ -62,7 +62,8 @@
         height: fit-content;
         width: fit-content;
         min-width: 62px;
-        padding: 6px 14px;
+        padding: 5px 14px;
+        font-size: 14px;
     }
     .b_button_slot {
         margin: auto;
