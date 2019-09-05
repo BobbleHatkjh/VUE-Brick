@@ -1,15 +1,16 @@
 <template>
 
-    <div id="A" class="b_a" @click="hrefJump()">
-        <slot></slot>
+    <div id="Inclusion" class="b_inclusion" >
+
     </div>
 
 </template>
 
+
 <script>
     export default {
-        name: 'A',
-        props: ['href'],
+        name: 'Inclusion',
+        props: ['inclusion'],
         data() {
             return {
 
@@ -25,6 +26,7 @@
         },
 
         created(){
+
             // 主题设置
             // this.Theme = STo.ThemeConfig;
 
@@ -33,18 +35,9 @@
     };
 </script>
 
+
 <style lang="scss">
     @import '../../styles/brick';
-
-    .b_a{
-        height: fit-content;
-        width: fit-content;
-        color: $ThemeColor;
-    }
-    .b_a:hover{
-        cursor: pointer;
-        font-weight: bold;
-    }
 
 
 </style>

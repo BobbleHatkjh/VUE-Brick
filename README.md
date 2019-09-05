@@ -9,11 +9,11 @@ _'Library'is a library of derivative components of 'Brick'_
     
 <br/>
 
-_'Library'makes a whole set of functional class'Vue' component libraries based on the common functions of programmers, whether small to'A, Button'tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. I hope'Library'will bring some convenience to your work._
+_'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Library' will bring some convenience to your work._
 
 
 
-> <a href="https://github.com/BobbleHatkjh/VUE-Brick">gitHub</a>  &emsp;&emsp;  <a href="https://www.npmjs.com/package/b-library">NPM</a>
+> <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">gitHub</a>  &emsp;&emsp;  <a href="https://www.npmjs.com/package/b-library" target="_blank">NPM</a>
 
 
 

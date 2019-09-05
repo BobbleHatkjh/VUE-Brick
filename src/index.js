@@ -2,6 +2,7 @@ import b_a from './components/a/a.vue'
 import b_button from './components/button/button.vue'
 import b_footer from './components/footer/footer.vue'
 import b_headBar from './components/header/header.vue'
+import b_inclusion from './components/inclusion/inclusion.vue'
 import b_link from './components/link/link.vue'
 import b_my from './components/my/my.vue'
 import b_notice from './components/notice/notice.vue'
@@ -19,6 +20,7 @@ export const A = b_a;
 export const Button = b_button;
 export const Footer = b_footer;
 export const HeadBar = b_headBar;
+export const Inclusion = b_inclusion;
 export const Notice = b_notice;
 export const PageLabel = b_page_label;
 export const Link = b_link;
