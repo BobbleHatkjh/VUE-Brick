@@ -1,6 +1,6 @@
 <template>
-    <div ref="foot" class="foot" @mouseover="hov(1)" @mouseout="hov(0)">
-        <div ref="up" class="up" :style="footer_trigger_style">
+    <div ref="foot" :class="footFold ? 'foot':'foot_unfold'" :style="footer_height" @mouseover="hov(1)" @mouseout="hov(0)">
+        <div class="up" v-if="footFold" :style="footer_trigger_style">
             <img src="../../../static/up_white.png" alt="up" class="up_img">
         </div>
         <div class="foot_con">
@@ -48,12 +48,12 @@
     export default {
         name: 'Footer',
         // inject:['turnTo','OutSide','ComponentCall','requestTo'],
-        props: ['logo', 'footer_page', 'footer__', 'support__', 'trigger'],
+        props: ['logo', 'footer_page', 'footer__', 'support__', 'trigger', 'footFold'],
         data() {
             return {
-                Theme: {},
-                footer_trigger_style: {margin: '-60px auto 0 auto'},
+                footer_trigger_style: {margin: '-60px auto 0 auto',opacity:''},
                 QRCode: QRCode,
+                footer_height:{ height:'' },
                 text_word: ''
             }
         },
@@ -72,14 +72,19 @@
                     default:
                         break
                 }
+                if(!this.footFold){
+                    this.footer_height.height = '310px';
+                }
             },
             hov(from) {
-                if (from) {
-                    this.$refs.foot.style.height = '310px';
-                    this.$refs.up.style.opacity = '0'
-                } else {
-                    this.$refs.foot.style.height = '0';
-                    this.$refs.up.style.opacity = '1'
+                if(this.footFold){
+                    if (from) {
+                        this.footer_height.height = '310px';
+                        this.footer_trigger_style.opacity = '0'
+                    } else {
+                        this.footer_height.height = '0';
+                        this.footer_trigger_style.opacity = '1'
+                    }
                 }
             },
             // turn (from,index,to){  // 依据所选header项载入二级页面
@@ -134,6 +139,12 @@
         z-index: 99;
         bottom: 0;
         height: 0;
+        width: 100%;
+        padding-top: 1px;
+        background-color: rgba($BacColor, 0.5);
+        transition: height 300ms;
+    }
+    .foot_unfold{
         width: 100%;
         padding-top: 1px;
         background-color: rgba($BacColor, 0.5);

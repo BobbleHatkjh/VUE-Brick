@@ -5,15 +5,21 @@
 
 _'Library'is a library of derivative components of 'Brick'_
 
-[![NPM version](https://img.shields.io/npm/v/b-library.svg)](https://www.npmjs.com/package/b-library)
+<img src="https://img.shields.io/npm/v/b-library.svg" alt="npm">
+<img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg" alt="Build Status">
+<img src="https://img.shields.io/npm/l/vue.svg" alt="License">
+       
+
+         
     
+<a></a>   
 <br/>
 
 _'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Library' will bring some convenience to your work._
 
 
 
-> <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">gitHub</a>  &emsp;&emsp;  <a href="https://www.npmjs.com/package/b-library" target="_blank">NPM</a>
+> <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">GitHub</a>  &emsp;&emsp;  <a href="https://www.npmjs.com/package/b-library" target="_blank">NPM</a>
 
 
 
@@ -28,7 +34,7 @@ Router       // 尚在准备
 Footer       // √
 HeadBar      // √
 TopBar       // √    
-Inclusion    // 尚在准备   #收纳格
+Inclusion    // √
 Login        // 尚在准备
 PageLabel    // √
 Register     // 尚在准备    

@@ -2,7 +2,9 @@
 
     <div id="PageLabel" class="b_page_label">
         <div v-if="avatar" class="b_page_label_avatar"></div>
-        <a>{{title}}</a>
+        <a>
+            <slot></slot>
+        </a>
     </div>
 
 </template>
@@ -11,7 +13,7 @@
 <script>
     export default {
         name: 'PageLabel',
-        props: ['avatar','title'],
+        props: ['avatar'],
         data() {
             return {
 
