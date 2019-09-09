@@ -160,8 +160,8 @@
     }
     .b_inclusion_con_frame:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.1);
-        box-shadow: 0 0 10px rgba($ThemeColor,0.6);
+        background-color: rgba($ThemeColor,0.2);
+        box-shadow: 0 0 10px rgba($ThemeColor,0.2);
     }
     .b_inclusion_con_logo{
         display: flex;
@@ -208,7 +208,7 @@
 
 
     .line_vertical{
-        height: 60%;
+        height: 50%;
         width: 0;
         margin: auto;
         border-right: 1px solid rgba($ThemeColor,0.7);

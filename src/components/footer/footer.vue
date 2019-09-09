@@ -18,7 +18,7 @@
 
 
                 <div class="foot_list_frame">
-                    <div class="foot_list_frame_div"><a class="mar">{{ footer__.lab[0] }}</a></div>
+                    <div class="foot_list_frame_div"><a class="mar">联系我们</a></div>
                     <div class="qr_code">
                         <img :src="QRCode" alt="QR_code" draggable="false">
                     </div>
@@ -28,8 +28,8 @@
 
         </div>
         <div class="supplier">
-            <div class="supplier_text"><a class="mar">{{ footer__.link }}</a></div>
-            <div class="tou_wei" v-for="value in support__" :key="value.name">
+            <div class="supplier_text"><a class="mar">合作链接</a></div>
+            <div class="tou_wei" v-for="value in support" :key="value.name">
                 <a class="mar support" @click="OutLink(value.link)">{{value.name}}</a>
             </div>
 
@@ -47,11 +47,10 @@
 
     export default {
         name: 'Footer',
-        // inject:['turnTo','OutSide','ComponentCall','requestTo'],
-        props: ['logo', 'footer_page', 'footer__', 'support__', 'trigger', 'footFold'],
+        props: ['logo', 'support', 'trigger', 'footFold'],
         data() {
             return {
-                footer_trigger_style: {margin: '-60px auto 0 auto',opacity:''},
+                footer_trigger_style: { margin: '-60px auto 0 auto',opacity:'' },
                 QRCode: QRCode,
                 footer_height:{ height:'' },
                 text_word: ''

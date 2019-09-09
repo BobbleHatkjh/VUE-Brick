@@ -29,4 +29,3 @@ export const My = b_my;
 export const NaviBar = b_navigation_bar;
 export const Dot = b_dot;
 export const TopBar = b_topBar;
-

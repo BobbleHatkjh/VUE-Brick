@@ -10,9 +10,8 @@ _'Library'is a library of derivative components of 'Brick'_
 <img src="https://img.shields.io/npm/l/vue.svg" alt="License">
        
 
-         
-    
-<a></a>   
+<a></a>  
+ 
 <br/>
 
 _'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Library' will bring some convenience to your work._
