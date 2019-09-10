@@ -56,7 +56,7 @@ Theme Configuration       // 尚在准备
 <template>
     <div class="index">
  
-        <Notice :notice__="myData" />
+        <Notice :noticeData="myData" />
         
     </div>
 </template>

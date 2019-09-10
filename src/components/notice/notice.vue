@@ -6,14 +6,12 @@
       <img :src="Loader" alt="" />
     </div>
     <div class="swiper-wrapper notice_frame">
-      <div class="swiper-slide notice_word" v-for="value in notice__" :key="value">
+      <div class="swiper-slide notice_word" v-for="value in noticeData" :key="value">
         <a style="margin: auto 0">{{value}}</a>
       </div>
-
     </div>
-
-
   </div>
+
 
 </template>
 
@@ -26,7 +24,7 @@
   export default {
     name: 'Notice',
     // inject:['reload','turnTo','ComponentCall','requestTo'],
-    props: ['notice__','trigger'],
+    props: ['noticeData','trigger'],
     data(){
       return{
         home_page: {},

@@ -149,6 +149,7 @@
         height: 60px;
         width: 100%;
         text-align: left;
+        background-color: white;
         box-shadow: 0 0 3px #D7D7D7;
     }
 

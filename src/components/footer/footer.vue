@@ -173,9 +173,10 @@
     }
 
     .foot_img {
-        height: auto;
-        width: 85%;
-        margin: auto 60px auto auto;
+        height: 78%;
+        width: auto;
+        max-width: 95%;
+        margin: auto auto auto 0;
     }
 
     .foot_list {
