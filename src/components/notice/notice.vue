@@ -23,7 +23,6 @@
 
   export default {
     name: 'Notice',
-    // inject:['reload','turnTo','ComponentCall','requestTo'],
     props: ['noticeData','trigger'],
     data(){
       return{

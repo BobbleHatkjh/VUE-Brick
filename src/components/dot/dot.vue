@@ -1,6 +1,6 @@
 <template>
 
-    <div id="Dot" class="b_dot">
+    <div id="Dot" class="b_dot" :style="b_dot_style" :class="backGroundColor === 'white' && 'b_dot_white'">
         <div class="b_dot_slot">
             <slot></slot>
         </div>
@@ -12,15 +12,25 @@
 <script>
     export default {
         name: 'Dot',
-        props: [],
+        props: ['fillet','backGroundColor'],
         data(){
             return{
-
+                b_dot_style:{
+                    borderRadius:'100px'
+                }
             }
         },
         methods:{
-
+            filletSelect(){
+                if(!this.fillet){
+                    this.b_dot_style.borderRadius = '5px'
+                }
+            }
         },
+        created() {
+            this.filletSelect();
+
+        }
 
     }
 </script>
@@ -31,14 +41,13 @@
 
     .b_dot{
         position: fixed;
-        bottom: 24px;
-        right: 24px;
+        bottom: 100px;
+        right: 30px;
         display: flex;
         height: 54px;
         width: 54px;
-        border-radius: 100px;
         background-color: rgba($BacColor, 0.6);
-        box-shadow: 0 0 5px rgba($BacColor, 0.5);
+        box-shadow: 0 0 8px rgba($BacColor, 0.4);
         overflow: hidden;
     }
     .b_dot:hover{
@@ -46,7 +55,10 @@
         background-color: rgba($ThemeColor,0.9);
         box-shadow: 0 0 12px rgba($ThemeColor,0.9);
     }
-
+    .b_dot_white{
+        color: #161616;
+        background-color: white
+    }
 
     .b_dot_slot{
         margin: auto;
@@ -54,6 +66,5 @@
         font-size: 14px;
         color: white;
     }
-
 
 </style>
