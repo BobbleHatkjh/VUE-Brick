@@ -46,6 +46,7 @@
         display: flex;
         height: 54px;
         width: 54px;
+        color: white;
         background-color: rgba($BacColor, 0.6);
         box-shadow: 0 0 8px rgba($BacColor, 0.4);
         overflow: hidden;
@@ -64,7 +65,6 @@
         margin: auto;
         font-weight: bolder;
         font-size: 14px;
-        color: white;
     }
 
 </style>

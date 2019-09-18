@@ -11,7 +11,7 @@ import b_title from './components/title/title.vue'
 import b_navigation_bar from './components/naviBar/naviBar.vue'
 import b_dot from './components/dot/dot.vue'
 import b_topBar from './components/topBar/topBar.vue'
-
+import b_tip from './components/tip/tip.vue'
 
 
 
@@ -29,3 +29,5 @@ export const My = b_my;
 export const NaviBar = b_navigation_bar;
 export const Dot = b_dot;
 export const TopBar = b_topBar;
+
+
