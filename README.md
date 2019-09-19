@@ -44,6 +44,7 @@ Title(long image)         // √
 Link(language switch)     // √
 Page template             // 尚在准备   
 Theme Configuration       // 尚在准备   
+Test mode                 // 尚在准备
 ``` 
 
 

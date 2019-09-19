@@ -41,14 +41,14 @@
             <div class="b_inclusion_con_frame" v-if="value.info.length > 2" @click="hrefJump(value.info[2].url)">
                 <div class="b_inclusion_con_logo">
                     <div class="b_inclusion_con_logo_img">
-                        <img :src="value.info[1].logo" alt=""/>
+                        <img :src="value.info[2].logo" alt=""/>
                     </div>
                 </div>
                 <div class="b_inclusion_con_title">
-                    <a>{{value.info[1].title}}</a>
+                    <a>{{value.info[2].title}}</a>
                 </div>
                 <div class="b_inclusion_con_introduce">
-                    <a>{{value.info[1].introduce}}</a>
+                    <a>{{value.info[2].introduce}}</a>
                 </div>
             </div>
 

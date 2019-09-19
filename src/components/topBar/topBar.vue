@@ -10,11 +10,11 @@
 
         <div class="label_search" >
             <div class="label_search_frame">
-                <div class="search_img" @mouseover="changeSearchImg('in')" @mouseout="changeSearchImg('out')">
+                <div class="search_img" @click="searchButton" @mouseover="changeSearchImg('in')" @mouseout="changeSearchImg('out')">
                     <img :src="search_img" alt="" draggable="false"/>
                 </div>
                 <label class="search_label_d">
-                    <input class="search_input"/>
+                    <input @input="searchCon($event)" @keyup.enter="searchButton"/>
                 </label>
             </div>
         </div>
@@ -53,11 +53,11 @@
             return {
                 router:[],
                 search_img: search_d,
+                search_word:''
             };
         },
 
         methods:{
-
             // 改变搜索颜色
             changeSearchImg(what){
                 if(what === 'in'){
@@ -71,8 +71,8 @@
             userClick(Todo,to){
                 if(to !== undefined){
                     if(Todo === 'toTurn'){
-                        console.log(`点击了跳转到${to}`);
-
+                        console.log(`点击跳转到内部链接 ${to}`);
+                        this.$emit('return',to) // @return
                     } else {
                         // 外部链接
                         window.open(to,"_blank");
@@ -80,6 +80,15 @@
                 }
             },
 
+            // 搜索按钮
+            searchButton(){
+                this.$emit('search',this.search_word)
+            },
+
+            // 搜索输入框内容
+            searchCon(event){
+                this.search_word = event.currentTarget.value
+            },
 
             // 计算路由
             menuDataAnalyse(){
@@ -220,6 +229,8 @@
     .search_label_d input{
         border: none;
         outline: none;
+        width: 100%;
+        background-color: rgba(255,255,255,0);
     }
 
 

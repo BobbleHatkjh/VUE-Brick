@@ -17,9 +17,11 @@
         },
 
         methods:{
-            //
+            // a标签的跳转功能
             hrefJump(){
-                window.open(this.href,"_blank");
+                if(this.href !== '' && this.href !== undefined){
+                    window.open(this.href,"_blank")
+                }
             }
 
         },

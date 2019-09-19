@@ -12,7 +12,7 @@
             </div>
             <div class="left_frame_drop" v-show = "value.show_">
                 <div class="drop_paste">
-                    <div class="left_frame_drop_mid" v-for="(valueIn, indexIn) in value.lab" @click="turn(valueIn.path,index,indexIn)" :class="indexIn === value.lab.length - 1 && 'drop_last_css'">
+                    <div class="left_frame_drop_mid" v-for="(valueIn, indexIn) in value.lab" @click="turn(valueIn.onclick,valueIn.To,index,indexIn)" :class="indexIn === value.lab.length - 1 && 'drop_last_css'">
                         <div class="left_frame_drop_select" :class="(select_open[0] === index && select_open[1] === indexIn) && 'left_frame_drop_select_bac'">
                             <a>{{ valueIn.name }}</a>
                         </div>
@@ -36,10 +36,17 @@
             }
         },
         methods:{
-            turn(To,lab,labIn) {
-                // this.turnTo(this.$store.state.lab_select,index,'Twice');  // 跳转到二级页
-                console.log(`点击了 ${To},${lab},${labIn}`);
-                this.select_open = [lab,labIn];
+            turn(Todo,to,index,indexIn) {
+                if(to !== undefined){
+                    if(Todo === 'toTurn'){
+                        console.log(`点击跳转到内部链接 ${to}`);
+                        this.$emit('return',to) // @return
+                    } else {
+                        // 外部链接
+                        window.open(to,"_blank");
+                    }
+                }
+                this.select_open = [index,indexIn];
             },
 
             naviData(){

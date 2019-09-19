@@ -21,7 +21,7 @@
             }
         },
         methods:{
-            filletSelect(){
+            filletSelect (){
                 if(!this.fillet){
                     this.b_dot_style.borderRadius = '5px'
                 }
@@ -59,6 +59,9 @@
     .b_dot_white{
         color: #161616;
         background-color: white
+    }
+    .b_dot_white:hover{
+        color: white;
     }
 
     .b_dot_slot{

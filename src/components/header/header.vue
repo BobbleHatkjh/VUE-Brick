@@ -103,8 +103,8 @@
             userClick(Todo,to){
                 if(to !== undefined){
                     if(Todo === 'toTurn'){
-                        console.log(`点击了跳转到${to}`);
-
+                        console.log(`点击跳转到内部链接 ${to}`);
+                        this.$emit('return',to) // @return
                     } else {
                         // 外部链接
                         window.open(to,"_blank");
