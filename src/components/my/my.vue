@@ -317,7 +317,7 @@
         background-color: #ffffff;
     }
     .qub_2:hover{
-        color: rgba($ThemeColor,1);
+        @include Theme-Color($theme-color-green);
         cursor: pointer;
     }
     .qub_img{
@@ -346,8 +346,8 @@
     }
     .login_register_frame:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.8);
-        box-shadow: 0 0 20px rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.8);
+        @include Theme-BoxShadow(20px,$theme-color-green,0.8);
     }
     .line_shu{
         height: 20px;
@@ -438,8 +438,8 @@
     }
     .my_game:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.8);
-        box-shadow: 0 0 20px rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.8);
+        @include Theme-BoxShadow(20px,$theme-color-green,0.8);
     }
     .quit{
         display: flex;
@@ -451,8 +451,8 @@
     }
     .quit:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.8);
-        box-shadow: 0 0 20px rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.8);
+        @include Theme-BoxShadow(20px,$theme-color-green,0.8);
     }
 
     @keyframes table_in

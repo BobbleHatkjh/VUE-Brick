@@ -5,7 +5,7 @@
             <div class="label_logo_img">
                 <img :src="logo" alt=""/>
             </div>
-            <a>{{msg}}</a>
+            <a>{{name}}</a>
         </div>
 
         <div class="label_search" >
@@ -24,16 +24,34 @@
                 <div class="router_title">
                     <a :class="value.show_ && 'router_border'">{{ value.name }}</a>
                 </div>
-                <div class="drop_occupy" :class="index === router.length -1 && 'drop_occupy_last'">
-                    <div class="drop_frame" v-show = "value.lab.length !== 0 && value.show_" :class="index === router.length -1 && 'drop_occupy_last'">
+                <div class="drop_occupy" :class="!themeConfig && index === router.length -1 && 'drop_occupy_last'">
+                    <div class="drop_frame" v-show = "value.lab.length !== 0 && value.show_" :class="!themeConfig && index === router.length -1 && 'drop_occupy_last'">
                         <div class="drop_frame_title" v-for="(valueIn , indexIn) in value.lab" @click="userClick(valueIn.onclick,valueIn.To)">
                             <a>{{ valueIn.name }}</a>
                         </div>
                     </div>
                 </div>
-
             </div>
 
+            <!--主题配置 -->
+            <div class="router_frame" v-if="themeConfig" @mouseover="themeShow = !themeShow" @mouseout="themeShow = !themeShow">
+                <div class="router_title theme_title">
+                    <div class="theme_show_div"></div>
+                </div>
+                <div class="drop_occupy" :class="'drop_occupy_last'">
+                    <div class="drop_frame theme_drop_frame" v-show = "themeShow" :class="'drop_occupy_last'">
+                        <div class="drop_frame_title theme_change_green"  @click="themeFun('green')">
+                            <a>绿色</a>
+                        </div>
+                        <div class="drop_frame_title theme_change_blue"  @click="themeFun('blue')">
+                            <a>蓝色</a>
+                        </div>
+                        <div class="drop_frame_title theme_change_red"  @click="themeFun('red')">
+                            <a>红色</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
@@ -48,12 +66,13 @@
 
     export default {
         name: 'TopBar',
-        props: ['logo','msg','search','menuData'],
+        props: ['logo','name','search','menuData','themeConfig','test'],
         data() {
             return {
                 router:[],
                 search_img: search_d,
-                search_word:''
+                search_word:'',
+                themeShow: false,
             };
         },
 
@@ -71,12 +90,24 @@
             userClick(Todo,to){
                 if(to !== undefined){
                     if(Todo === 'toTurn'){
-                        console.log(`点击跳转到内部链接 ${to}`);
+                        this.test && console.log(`点击跳转到内部链接 ${to}`);
                         this.$emit('return',to) // @return
                     } else {
                         // 外部链接
                         window.open(to,"_blank");
                     }
+                }
+            },
+
+            // 改变主题
+            themeFun(color){
+                const config_ = window.document.documentElement;
+                if(color === 'red'){
+                    config_.setAttribute('data-theme', 'red');
+                } else if (color === 'blue'){
+                    config_.setAttribute('data-theme', 'blue');
+                } else {
+                    config_.setAttribute('data-theme', 'green');
                 }
             },
 
@@ -88,6 +119,18 @@
             // 搜索输入框内容
             searchCon(event){
                 this.search_word = event.currentTarget.value
+            },
+
+            // 测试用
+            test_(){
+                const testData = {
+                    logo:this.logo,
+                    name:this.name,
+                    search:this.search,
+                    menuData:this.menuData,
+                    themeConfig:this.themeConfig
+                };
+                console.log('props' + testData);
             },
 
             // 计算路由
@@ -128,7 +171,7 @@
                     }
                 );
                 this.router = routerData;
-                // console.log(this.router);
+                this.test && console.log('路由表'+this.router);
 
             }
 
@@ -138,9 +181,7 @@
 
             // 计算路由
             this.menuDataAnalyse();
-
-            // 主题设置
-            // this.Theme = STo.ThemeConfig;
+            this.test && this.test_();
 
         },
 
@@ -201,7 +242,7 @@
         border: 1px solid #D7D7D7;
     }
     .label_search_frame:hover{
-        border: 1px solid $ThemeColor;
+        @include Theme-Border(1px,$theme-color-green);
     }
 
     .search_img{
@@ -214,7 +255,7 @@
     }
     .search_img:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.8);
     }
     .search_img img{
         height: 80%;
@@ -251,7 +292,7 @@
     }
     .router_frame:hover{
         cursor: pointer;
-        color: $ThemeColor;
+        @include Theme-Color($theme-color-green);
     }
     .router_title{
         display: flex;
@@ -263,14 +304,24 @@
         font-size: 16px;
         margin: auto;
     }
+    .theme_title{
+        padding-left: 12px;
+        padding-right: 8px;
+    }
     .router_border{
-        border-bottom: 3px solid $ThemeColor
+        @include Theme-BorderBottom(3px,$theme-color-green,0.8);
+    }
+    .theme_show_div{
+        height: 20px;
+        width: 40px;
+        margin: auto;
+        border-radius: 4px;
+        @include Theme-Bac($theme-color-green,0.8);
     }
     .drop_occupy{
         display: block;
         height: 1px;
         width: 1px;
-        /*float: right;*/
         margin: -10px auto auto 0;
     }
     .drop_occupy_last{
@@ -279,12 +330,14 @@
     .drop_frame{
         display: block;
         min-width: 120px;
-        /*float: right;*/
         margin: 0 0 auto auto;
         padding: 8px;
         background-color: white;
         border-radius: 4px;
         border: 1px solid #cdcdcd;
+    }
+    .theme_drop_frame{
+        min-width: 66px;
     }
     .drop_frame_title{
         display: flex;
@@ -295,12 +348,22 @@
         border-radius: 3px;
     }
     .drop_frame_title:hover{
-        background-color: rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.8);
         color: white;
     }
     .drop_frame_title a{
         font-size: 15px;
         margin: auto auto auto 8px;
+    }
+
+    .theme_change_green:hover{
+        @include Theme-Bac($theme-color-green,0.8);
+    }
+    .theme_change_blue:hover{
+        @include Theme-Bac($theme-color-blue,0.8);
+    }
+    .theme_change_red:hover{
+        @include Theme-Bac($theme-color-red,0.8);
     }
 
 </style>

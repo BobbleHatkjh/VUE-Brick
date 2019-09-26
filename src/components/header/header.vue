@@ -190,15 +190,15 @@
     .table_b:hover{
         transition: box-shadow 200ms ,background-color 200ms, border-left-color 200ms, border-right-color 200ms;
         margin: 0 auto 0 -3px;
-        border-left: 3px solid rgba($ThemeColor,0.5);
-        border-right: 3px solid rgba($ThemeColor,0.5);
-        background-color: rgba($ThemeColor,0.9);
-        box-shadow: 0 0 20px rgba($ThemeColor,0.8);
+        @include Theme-BorderLeft(3px,$theme-color-green,0.5);
+        @include Theme-BorderRight(3px,$theme-color-green,0.5);
+        @include Theme-Bac($theme-color-green,0.9);
+        @include Theme-BoxShadow(20px,$theme-color-green,0.8);
     }
     .table_hover:hover{
         transition: box-shadow 200ms ,background-color 200ms;
-        background-color: rgba($ThemeColor,0.9);
-        box-shadow: 0 0 20px rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.9);
+        @include Theme-BoxShadow(20px,$theme-color-green,0.8);
     }
     .header_child_css{
         border-bottom-left-radius: $ThemeBorder;

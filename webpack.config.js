@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require("webpack");
 
+
 module.exports = {
     devtool: 'source-map',
     entry: path.join(__dirname, './src/index.js'),
@@ -12,10 +13,11 @@ module.exports = {
     },
 
     module: {
-        rules: [{
-            test: /\.vue$/,
-            loader: 'vue-loader'
-        },
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
             {
                 test: /\.less$/,
                 use: [

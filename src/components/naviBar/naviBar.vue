@@ -28,7 +28,7 @@
 <script>
     export default {
         name: 'NaviBar',
-        props: ['naviBarData','link'],
+        props: ['naviBarData','link','test'],
         data(){
             return{
                 naviRouter: [],   // 路由数据
@@ -39,7 +39,7 @@
             turn(Todo,to,index,indexIn) {
                 if(to !== undefined){
                     if(Todo === 'toTurn'){
-                        console.log(`点击跳转到内部链接 ${to}`);
+                        this.test && console.log(`点击跳转到内部链接 ${to}`);
                         this.$emit('return',to) // @return
                     } else {
                         // 外部链接
@@ -86,7 +86,7 @@
                     }
                 );
                 this.naviRouter = routerData;
-                console.log(routerData);
+                this.test && console.log(routerData);
             },
 
 
@@ -149,23 +149,23 @@
     }
     .left_frame:hover{
         cursor: pointer;
-        color: $ThemeColor;
-        border-left: 3px solid $ThemeColor;
-        border-right: 3px solid $ThemeColor;
+        @include Theme-Color($theme-color-green);
+        @include Theme-BorderLeft(3px,$theme-color-green);
+        @include Theme-BorderRight(3px,$theme-color-green);
         transition: box-shadow 200ms, background-color 200ms;
         background-color: white;
-        box-shadow: 0 0 5px rgba($ThemeColor,0.9);
+        @include Theme-BoxShadow(5px,$theme-color-green,0.6);
     }
     .left_frame a{
         margin: auto;
     }
     .drop_off_css{
         border-bottom-right-radius: 0;
-        border-left: 3px solid $ThemeColor;
-        border-right: 3px solid $ThemeColor;
+        @include Theme-BorderLeft(3px,$theme-color-green);
+        @include Theme-BorderRight(3px,$theme-color-green);
     }
     .left_frame_select_color{
-        color: $ThemeColor
+        @include Theme-Color($theme-color-green);
     }
 
 
@@ -185,7 +185,7 @@
         width: 100%;
         margin: 0 0 auto auto;
         font-size: 14px;
-        border-right: 3px solid $ThemeColor;
+        @include Theme-BorderRight(3px,$theme-color-green);
         animation: table_navi 0.25s infinite;
         animation-iteration-count:1;
         color: rgba($BacColor,0.6);
@@ -196,7 +196,7 @@
         cursor: pointer;
         color: white;
         transition: box-shadow 100ms ,background-color 100ms;
-        background-color: rgba($ThemeColor,0.8);
+        @include Theme-Bac($theme-color-green,0.8);
     }
     .left_frame_drop_select{
         display: flex;
@@ -209,7 +209,7 @@
     }
     .left_frame_drop_select_bac{
         color: white;
-        background-color: rgba($ThemeColor,0.9);
+        @include Theme-Bac($theme-color-green,0.9);
     }
 
 
@@ -218,7 +218,7 @@
         border-bottom-right-radius: $ThemeBorder;
     }
     .drop_select{
-        background-color: rgba($ThemeColor,0.9);
+        @include Theme-Bac($theme-color-green,0.9);
     }
 
 

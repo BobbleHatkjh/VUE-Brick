@@ -53,8 +53,8 @@
     }
     .b_dot:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.9);
-        box-shadow: 0 0 12px rgba($ThemeColor,0.9);
+        @include Theme-Bac($theme-color-green,0.9);
+        @include Theme-BoxShadow(12px,$theme-color-green,0.9);
     }
     .b_dot_white{
         color: #161616;

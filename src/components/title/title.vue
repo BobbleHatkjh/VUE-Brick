@@ -1,7 +1,7 @@
 <template>
 
     <div id="photo" class="head_view" :style="{backgroundImage:'url(' + title__.img + ')'}" >
-        <a>{{title__.title}}</a>
+        <a>{{title}}</a>
     </div>
 
 </template>
@@ -12,7 +12,7 @@
     export default {
         name: 'Tittle',
         // inject:['turnTo','requestTo','ComponentCall'],
-        props: ['title__'],
+        props: ['title'],
         data(){
             return{
 
@@ -39,6 +39,7 @@
         box-shadow: 0 0 30px #969696;
         background: #7d7d7d no-repeat center;
         background-size:cover;
+        @include Theme-Color($theme-color-green);
     }
     .head_view a{
         margin: auto;

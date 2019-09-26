@@ -1,6 +1,5 @@
 <template>
 
-
   <div class="roll_container_notice">
     <div class="roll_container_img">
       <img :src="Loader" alt="" />
@@ -12,7 +11,6 @@
     </div>
   </div>
 
-
 </template>
 
 
@@ -23,7 +21,7 @@
 
   export default {
     name: 'Notice',
-    props: ['noticeData','trigger'],
+    props: ['noticeData','trigger','test'],
     data(){
       return{
         home_page: {},
@@ -34,21 +32,10 @@
       }
     },
     methods:{
-      // noticeTrigger(){
-      //   switch (this.trigger) { // 默认居中
-      //     case 'left':
-      //       this.footer_trigger_style = { margin:'-60px auto 0 0' };
-      //       break;
-      //     case 'mid':
-      //       this.footer_trigger_style = { margin:'-60px auto 0 auto' };
-      //       break;
-      //     case 'right':
-      //       this.footer_trigger_style = { margin:'-60px 0 0 auto' };
-      //       break;
-      //     default:
-      //       break
-      //   }
-      // },
+      test_(){
+        this.test && console.log(this.noticeData);
+      }
+
     },
     mounted() {
       let myRoll = new Swiper('.roll_container_notice', {
@@ -64,6 +51,7 @@
       })
     },
     created(){
+      this.test_();
       // this.noticeTrigger();
     },
 

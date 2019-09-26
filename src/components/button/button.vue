@@ -77,13 +77,13 @@
 
     ._primary {
         color: white;
-        background-color: rgba($ThemeColor, 0.9);
+        @include Theme-Bac($theme-color-green,0.9);
     }
     ._primary:hover {
         transition: background-color 100ms, box-shadow 100ms;
         cursor: pointer;
-        background-color: rgba($ThemeColor, 1);
-        box-shadow: 0 0 6px rgba($ThemeColor, 0.6);
+        @include Theme-Bac($theme-color-green);
+        @include Theme-BoxShadow(6px,$theme-color-green,0.6);
     }
 
 
@@ -95,9 +95,9 @@
     ._default:hover{
         transition: border 100ms, color 100ms, box-shadow 100ms;
         cursor: pointer;
-        color: $ThemeColor;
-        border: 1px solid rgba($ThemeColor,0.8);
-        box-shadow: 0 0 6px rgba($ThemeColor, 0.6);
+        @include Theme-Color($theme-color-green);
+        @include Theme-Border(1px,$theme-color-green,0.8);
+        @include Theme-BoxShadow(6px,$theme-color-green,0.6);
     }
 
 

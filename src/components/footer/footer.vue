@@ -17,10 +17,24 @@
                 </div>
 
 
-                <div class="foot_list_frame">
+                <div class="foot_list_frame" :class="themeConfig && 'foot_list_frame_theme'">
                     <div class="foot_list_frame_div"><a class="mar">联系我们</a></div>
                     <div class="qr_code">
-                        <img :src="QRCode" alt="QR_code" draggable="false">
+                        <img :src="QRCode" class="qr_code_img" :class="themeConfig && 'QRCode_img_theme'" alt="QR_code" draggable="false">
+                    </div>
+
+                    <div class="theme_drop" v-if="themeConfig">
+                        <div class="theme_drop_title">
+
+                        </div>
+
+                        <div class="theme_drop_color">
+                            <div class="theme_drop_green" @click="themeFun('green')"></div>
+                            <div class="theme_drop_blue" @click="themeFun('blue')"></div>
+                            <div class="theme_drop_red" @click="themeFun('red')"></div>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -33,25 +47,25 @@
                 <a class="mar support" @click="OutLink(value.link)">{{value.name}}</a>
             </div>
 
-            <!--<div class="supplier_link" v-if="$store.state.header_style === 'account'">-->
-                <!--<Link/>-->
-            <!--</div>-->
+            <!--      <div class="supplier_link">-->
+
+            <!--      </div>-->
+
 
         </div>
+
     </div>
 </template>
 
 
 <script>
-    import QRCode from '../../../static/QRcode.png'
 
     export default {
         name: 'Footer',
-        props: ['logo', 'support', 'trigger', 'footFold'],
+        props: ['logo', 'support', 'trigger', 'footFold', 'themeConfig', 'QRCode'],
         data() {
             return {
                 footer_trigger_style: { margin: '-60px auto 0 auto',opacity:'' },
-                QRCode: QRCode,
                 footer_height:{ height:'' },
                 text_word: ''
             }
@@ -75,6 +89,19 @@
                     this.footer_height.height = '310px';
                 }
             },
+
+            // 改变主题
+            themeFun(color){
+                const config_ = window.document.documentElement;
+                if(color === 'red'){
+                    config_.setAttribute('data-theme', 'red');
+                } else if (color === 'blue'){
+                    config_.setAttribute('data-theme', 'blue');
+                } else {
+                    config_.setAttribute('data-theme', 'green');
+                }
+            },
+
             hov(from) {
                 if(this.footFold){
                     if (from) {
@@ -86,9 +113,7 @@
                     }
                 }
             },
-            // turn (from,index,to){  // 依据所选header项载入二级页面
-            //     this.turnTo(from,index,to);
-            // },
+
             OutLink(linkUrl) {
                 window.open(linkUrl, "_blank");
             },
@@ -101,9 +126,6 @@
 
             this.footerTrigger();
 
-            // 主题设置
-            // this.Theme = STo.ThemeConfig;
-
         },
 
 
@@ -115,6 +137,10 @@
 
     .mar {
         margin: auto;
+    }
+    .grid{
+        background-color: rgba($BacColor, 0.6);
+        box-shadow: 0 0 15px rgba($BacColor, 0.5);
     }
 
     .up {
@@ -191,10 +217,13 @@
     .foot_list_frame {
         height: 200px;
         width: 150px;
-        margin: auto 10px auto 0;
+        margin: 0 10px auto 0;
         background-color: rgba($BacColor, 0.6);
-        box-shadow: 0 0 20px rgba($BacColor, 0.6);
+        box-shadow: 0 0 15px rgba($BacColor, 0.5);
         border-radius: $ThemeBorder;
+    }
+    .foot_list_frame_theme{
+        height: 170px;
     }
 
     .foot_input_frame {
@@ -216,7 +245,7 @@
         margin: 0 auto auto 10px;
         padding: 14px;
         background-color: rgba($BacColor, 0.6);
-        box-shadow: 0 0 20px rgba($BacColor, 0.6);
+        box-shadow: 0 0 15px rgba($BacColor, 0.5);
         color: white;
         border: none;
         font-size: 16px;
@@ -243,11 +272,70 @@
         width: 100%;
         margin: 0 auto;
     }
-
-    .qr_code img {
+    .qr_code_img {
         margin: auto;
         height: 81%;
         width: 81%
+    }
+    .QRCode_img_theme{
+        margin: 0 auto auto auto;
+        height: 74%;
+        width: 74%
+    }
+    .theme_drop{
+        display: block;
+        height: 25px;
+        width: 150px;
+        margin-top: -15px;
+        text-align: center;
+        border-radius: $ThemeBorder;
+        background-color: rgba($BacColor,0.6);
+        box-shadow: 0 0 15px rgba($BacColor, 0.6);
+        overflow: hidden;
+    }
+    .theme_drop:hover{
+        cursor: pointer;
+        transition: height 200ms;
+        height: 80px;
+    }
+    .theme_drop_title{
+        height: 11px;
+        width: 134px;
+        margin: 7px auto;
+        border-radius: $ThemeBorder;
+        @include Theme-Bac($theme-color-green,0.8);
+    }
+    .theme_drop_title:hover{
+        cursor: default;
+    }
+
+    .theme_drop_color{
+        display: flex;
+        height: 38px;
+        width: 134px;
+        margin: 16px auto 0 auto;
+    }
+
+    .theme_drop_green{
+        height: 100%;
+        width: 30%;
+        margin: 0 auto 0 0;
+        border-radius: $ThemeBorder - 6;
+        background-color: $theme-color-green;
+    }
+    .theme_drop_blue{
+        height: 100%;
+        width: 30%;
+        margin: 0 auto;
+        border-radius: $ThemeBorder - 6;
+        background-color: $theme-color-blue;
+    }
+    .theme_drop_red{
+        height: 100%;
+        width: 30%;
+        margin: 0 0 0 auto;
+        border-radius: $ThemeBorder - 6;
+        background-color: $theme-color-red;
     }
 
 
@@ -276,9 +364,25 @@
         color: white;
     }
 
+    .supplier_link{
+        display: flex;
+        height: 32px;
+        width: 80px;
+        padding-left: 5px;
+        margin: -2px 105px auto auto;
+        border-radius: $ThemeBorder;
+        background-color: rgba($BacColor,0.5);
+        box-shadow: 0 0 20px rgba($BacColor, 0.6);
+    }
+    .link_drop{
+        display: block;
+        height: 20px;
+        width: 50px;
+        background-color: #66ccff;
+    }
     .support:hover {
         cursor: pointer;
-        color: $ThemeColor;
+        @include Theme-Color($theme-color-green);
     }
 
 

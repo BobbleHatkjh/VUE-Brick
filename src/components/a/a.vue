@@ -41,7 +41,7 @@
     .b_a{
         height: fit-content;
         width: fit-content;
-        color: $ThemeColor;
+        @include Theme-Color($theme-color-green);
     }
     .b_a:hover{
         cursor: pointer;

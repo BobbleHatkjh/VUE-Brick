@@ -14,7 +14,7 @@ _'Library'is a library of derivative components of 'Brick'_
  
 <br/>
 
-_'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Library' will bring some convenience to your work._
+_'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Brick Library' will bring some convenience to your work._
 
 
 
@@ -29,22 +29,24 @@ A            // √
 Button       // √    
 Dot          // √
 Slot         // √    
-Router       // 尚在准备    
+Router       // In preparation    
 Footer       // √
 HeadBar      // √
 TopBar       // √    
 Inclusion    // √
-Login        // 尚在准备
+Login        // In preparation
 PageLabel    // √
-Register     // 尚在准备    
-Tips         // 尚在准备    
+Register     // In preparation    
+Tips         // In preparation    
 Notice       // √
 NavigationBar(vertical)   // √
 Title(long image)         // √
 Link(language switch)     // √
-Page template             // 尚在准备   
-Theme Configuration       // 尚在准备   
-Test mode                 // 尚在准备
+Page template             // In preparation 
+  
+Theme Configuration       // √   
+Test mode                 // test
+CSS Overall control       // In preparation
 ``` 
 
 
@@ -52,7 +54,7 @@ Test mode                 // 尚在准备
 
 ###introduction of <a style="color: #b96d27">import</a>
 
->少量组件 推荐的引入的方式
+>Few components - Recommended ways of import
 ```
 <template>
     <div class="index">
@@ -84,7 +86,7 @@ Test mode                 // 尚在准备
 <br/>
 
 
->多组件 推荐的引入的方式   
+>Multi components - Recommended ways of import   
 ```
     project
         |...

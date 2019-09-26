@@ -65,7 +65,7 @@
 <script>
     export default {
         name: 'Inclusion',
-        props: ['listData','gridLine'],
+        props: ['listData','gridLine','test'],
         data() {
             return {
                 Data__:[],
@@ -74,16 +74,15 @@
         },
 
         methods:{
-            //
+            // 是否显示边框
             gridSelect(){
-                console.log(this.gridLine);
+                this.test && console.log(this.gridLine);
                 if(this.gridLine !== undefined && this.gridLine !== ''){
                     this.Grid = this.gridLine
                 }
             },
-            //
+            // 计算显示内容
             checkData(){
-
                 const allData = [];
                 let singleLine = {};
                 let listLine = [];
@@ -109,7 +108,7 @@
                     }
                 );
                 this.Data__ = allData;
-                console.log(this.Data__);
+                this.test && console.log(this.Data__);
 
             },
 
@@ -160,8 +159,8 @@
     }
     .b_inclusion_con_frame:hover{
         cursor: pointer;
-        background-color: rgba($ThemeColor,0.2);
-        box-shadow: 0 0 10px rgba($ThemeColor,0.2);
+        @include Theme-Bac($theme-color-green,0.2);
+        @include Theme-BoxShadow(10px,$theme-color-green,0.2);
     }
     .b_inclusion_con_logo{
         display: flex;
@@ -211,8 +210,7 @@
         height: 50%;
         width: 0;
         margin: auto;
-        border-right: 1px solid rgba($ThemeColor,0.7);
-
+        @include Theme-BorderRight(1px,$theme-color-green,0.7);
     }
 
 </style>
