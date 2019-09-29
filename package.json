@@ -1,6 +1,6 @@
 {
   "name": "b-library",
-  "version": "0.8.0",
+  "version": "0.8.10",
   "description": "Vue Component Library, Customize your website like building blocks",
   "main": "dist/brick-library.min.js",
   "scripts": {

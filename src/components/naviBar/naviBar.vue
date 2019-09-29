@@ -149,10 +149,10 @@
     }
     .left_frame:hover{
         cursor: pointer;
+        transition: box-shadow 200ms, background-color 200ms;
         @include Theme-Color($theme-color-green);
         @include Theme-BorderLeft(3px,$theme-color-green);
         @include Theme-BorderRight(3px,$theme-color-green);
-        transition: box-shadow 200ms, background-color 200ms;
         background-color: white;
         @include Theme-BoxShadow(5px,$theme-color-green,0.6);
     }
@@ -176,7 +176,7 @@
     }
     .drop_paste{
         display: block;
-        width: 82%;
+        width: 87%;
         margin: 0 0 auto auto;
     }
     .left_frame_drop_mid{

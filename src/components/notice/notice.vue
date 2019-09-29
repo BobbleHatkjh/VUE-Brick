@@ -1,6 +1,6 @@
 <template>
 
-  <div class="roll_container_notice">
+  <div class="roll_container_notice" :class="show && 'roll_container_notice_click'" @click="show =! show">
     <div class="roll_container_img">
       <img :src="Loader" alt="" />
     </div>
@@ -25,6 +25,7 @@
     data(){
       return{
         home_page: {},
+        show:false,
         conObj:{
           height:''
         },
@@ -66,44 +67,52 @@
 
   .roll_container_notice{
     position: fixed;
-    top: 12px;
+    top: 72px;
     left: 0;
     z-index: 99;
     display: flex;
-    height: 40px;
-    width: 40px;
-    transition: width 400ms;
-    border-top-right-radius: $ThemeBorder;
-    border-bottom-right-radius: $ThemeBorder;
-    background-color: rgba($BacColor,0.5);
+    height: 45px;
+    width: 45px;
+    transition: width 400ms, background-color 400ms, box-shadow 400ms;
+    border-top-right-radius: $ThemeBorder - 2;
+    border-bottom-right-radius: $ThemeBorder - 2;
+    background-color: rgba($BacColor,0.08);
+    box-shadow: 0 0 5px rgba($BacColor,0.08);
     color: white;
     overflow: hidden;
   }
   .roll_container_notice:hover{
+    @include Theme-BorderRight(3px,$theme-color-green);
+    @include Theme-BoxShadow(3px,$theme-color-green,0.4)
+  }
+  .roll_container_notice_click{
     width: 340px;
+    background-color: white;
+    @include Theme-BorderRight(3px,$theme-color-green);
+    @include Theme-BoxShadow(3px,$theme-color-green,0.4)
   }
   .roll_container_img{
     position: absolute;
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 45px;
   }
   .roll_container_img img{
     margin: auto;
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
   }
   .roll_container_img:hover{
     cursor: pointer;
   }
   .notice_frame{
     width: 300px;
-    margin-left: 40px;
+    margin-left: 42px;
   }
   .notice_word{
     display: flex;
     width: 300px;
-    height: 40px;
+    height: 45px;
   }
 
 </style>

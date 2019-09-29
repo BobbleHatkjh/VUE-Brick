@@ -1,6 +1,6 @@
 <template>
 
-    <div id="photo" class="head_view" :style="{backgroundImage:'url(' + title__.img + ')'}" >
+    <div id="photo" class="head_view" :style="{backgroundImage:'url(' + Img + ')'}" >
         <a>{{title}}</a>
     </div>
 
@@ -11,8 +11,7 @@
 <script>
     export default {
         name: 'Tittle',
-        // inject:['turnTo','requestTo','ComponentCall'],
-        props: ['title'],
+        props: ['Img','title'],
         data(){
             return{
 

@@ -47,7 +47,7 @@
                             <a>蓝色</a>
                         </div>
                         <div class="drop_frame_title theme_change_red"  @click="themeFun('red')">
-                            <a>红色</a>
+                            <a>粉色</a>
                         </div>
                     </div>
                 </div>
@@ -357,13 +357,13 @@
     }
 
     .theme_change_green:hover{
-        @include Theme-Bac($theme-color-green,0.8);
+        background-color: rgba($theme-color-green,0.8);
     }
     .theme_change_blue:hover{
-        @include Theme-Bac($theme-color-blue,0.8);
+        background-color: rgba($theme-color-blue,0.8);
     }
     .theme_change_red:hover{
-        @include Theme-Bac($theme-color-red,0.8);
+        background-color: rgba($theme-color-red,0.8);
     }
 
 </style>

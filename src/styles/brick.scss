@@ -8,8 +8,8 @@ $ThemeBorder: 12px;
 
 // 更换主题版本
 $theme-color-green:#42b983;        /* 主题颜色 vue绿 */
-$theme-color-red: #ff2a12;         /* 更换的颜色 */
-$theme-color-blue: #1378ff;        /* 更换的颜色 */
+$theme-color-red: #fb7299;         /* 更换的颜色  B站粉 */
+$theme-color-blue: #1378ff;        /* 更换的颜色   */
 
 @mixin Theme-Bac($color,$op:1){    /*通过该函数设置字体颜色，后期方便统一管理；*/
   background-color : rgba($color,$op);

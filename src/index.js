@@ -19,7 +19,7 @@ import b_tip from './components/tip/tip.vue'
 export const A = b_a;
 export const Button = b_button;
 export const Footer = b_footer;
-export const HeadBar = b_headBar;
+// export const HeadBar = b_headBar;
 export const Inclusion = b_inclusion;
 export const Notice = b_notice;
 export const PageLabel = b_page_label;

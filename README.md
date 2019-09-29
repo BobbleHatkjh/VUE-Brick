@@ -31,7 +31,7 @@ Dot          // √
 Slot         // √    
 Router       // In preparation    
 Footer       // √
-HeadBar      // √
+HeadBar      // X
 TopBar       // √    
 Inclusion    // √
 Login        // In preparation
@@ -47,6 +47,7 @@ Page template             // In preparation
 Theme Configuration       // √   
 Test mode                 // test
 CSS Overall control       // In preparation
+Parallax effect           // In preparation
 ``` 
 
 

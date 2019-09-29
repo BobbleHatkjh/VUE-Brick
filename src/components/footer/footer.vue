@@ -10,20 +10,20 @@
             <div class="foot_list">
                 <div class="foot_input_frame">
                     <div class="foot_input_div">
-                        <div class="foot_input_textarea" v-model="text_word">
+                        <div class="foot_input_textarea" :class="grid && 'grid'" v-model="text_word">
                             <slot></slot>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="foot_list_frame" :class="themeConfig && 'foot_list_frame_theme'">
+                <div class="foot_list_frame" :class="[themeConfig && 'foot_list_frame_theme', grid && 'grid']">
                     <div class="foot_list_frame_div"><a class="mar">联系我们</a></div>
                     <div class="qr_code">
                         <img :src="QRCode" class="qr_code_img" :class="themeConfig && 'QRCode_img_theme'" alt="QR_code" draggable="false">
                     </div>
 
-                    <div class="theme_drop" v-if="themeConfig">
+                    <div class="theme_drop" v-if="themeConfig" :class="!grid && 'grid_drop'">
                         <div class="theme_drop_title">
 
                         </div>
@@ -47,9 +47,9 @@
                 <a class="mar support" @click="OutLink(value.link)">{{value.name}}</a>
             </div>
 
-            <!--      <div class="supplier_link">-->
+            <!--            <div class="supplier_link">-->
 
-            <!--      </div>-->
+            <!--            </div>-->
 
 
         </div>
@@ -62,7 +62,7 @@
 
     export default {
         name: 'Footer',
-        props: ['logo', 'support', 'trigger', 'footFold', 'themeConfig', 'QRCode'],
+        props: ['logo', 'support', 'trigger', 'footFold', 'themeConfig', 'QRCode', 'grid'],
         data() {
             return {
                 footer_trigger_style: { margin: '-60px auto 0 auto',opacity:'' },
@@ -121,9 +121,7 @@
 
         },
         created() {
-            // let STo = this.$store.state;
             // this.footer__ = STo[STo.language].footer;
-
             this.footerTrigger();
 
         },
@@ -166,27 +164,28 @@
         height: 0;
         width: 100%;
         padding-top: 1px;
-        background-color: rgba($BacColor, 0.5);
+        background-color: rgba($BacColor, 0.6);
         transition: height 300ms;
     }
     .foot_unfold{
         width: 100%;
         padding-top: 1px;
-        background-color: rgba($BacColor, 0.5);
+        background-color: rgba($BacColor, 0.6);
         transition: height 300ms;
     }
 
     .foot_con {
         display: flex;
         height: 200px;
-        width: 1080px;
+        width: 1024px;
         margin: 30px auto 0 auto;
     }
 
     .supplier {
         display: flex;
         height: 30px;
-        width: 1080px;
+        width: 1024px;
+        z-index: -0;
         margin: 24px auto 0 auto;
     }
 
@@ -218,8 +217,6 @@
         height: 200px;
         width: 150px;
         margin: 0 10px auto 0;
-        background-color: rgba($BacColor, 0.6);
-        box-shadow: 0 0 15px rgba($BacColor, 0.5);
         border-radius: $ThemeBorder;
     }
     .foot_list_frame_theme{
@@ -229,23 +226,21 @@
     .foot_input_frame {
         display: flex;
         height: 200px;
-        width: 560px;
+        width: 600px;
         margin: auto 0;
     }
 
     .foot_input_div {
         display: block;
         height: 100%;
-        width: 380px;
+        width: 600px;
     }
 
     .foot_input_textarea {
         height: 172px;
-        width: 512px;
-        margin: 0 auto auto 10px;
+        width: 552px;
+        margin: 0 auto auto 8px;
         padding: 14px;
-        background-color: rgba($BacColor, 0.6);
-        box-shadow: 0 0 15px rgba($BacColor, 0.5);
         color: white;
         border: none;
         font-size: 16px;
@@ -284,11 +279,13 @@
     }
     .theme_drop{
         display: block;
+        position: relative;
         height: 25px;
         width: 150px;
-        margin-top: -15px;
+        margin: -15px auto auto auto;
         text-align: center;
         border-radius: $ThemeBorder;
+        z-index: 100;
         background-color: rgba($BacColor,0.6);
         box-shadow: 0 0 15px rgba($BacColor, 0.6);
         overflow: hidden;
@@ -298,9 +295,14 @@
         transition: height 200ms;
         height: 80px;
     }
+    .grid_drop{
+        width: 120px;
+    }
+
     .theme_drop_title{
         height: 11px;
-        width: 134px;
+        width: 88.6%;
+        /* 134 */
         margin: 7px auto;
         border-radius: $ThemeBorder;
         @include Theme-Bac($theme-color-green,0.8);
@@ -312,7 +314,8 @@
     .theme_drop_color{
         display: flex;
         height: 38px;
-        width: 134px;
+        width: 88.6%;
+        /* 134 */
         margin: 16px auto 0 auto;
     }
 

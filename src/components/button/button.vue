@@ -45,9 +45,6 @@
             // 设置类型
             this.setType();
 
-            // 主题设置
-            // this.Theme = STo.ThemeConfig;
-
         },
 
     };
@@ -91,6 +88,7 @@
     ._default{
         color: rgba($BacColor,0.65);
         border: 1px solid #d2d2d2;
+        background-color: white;
     }
     ._default:hover{
         transition: border 100ms, color 100ms, box-shadow 100ms;
