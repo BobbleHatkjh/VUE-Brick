@@ -173,6 +173,7 @@
         display: flex;
         width: 100%;
         margin: 0 -3px 0 auto;
+        -webkit-margin-start: 3px;
     }
     .drop_paste{
         display: block;

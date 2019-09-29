@@ -40,13 +40,13 @@
                 </div>
                 <div class="drop_occupy" :class="'drop_occupy_last'">
                     <div class="drop_frame theme_drop_frame" v-show = "themeShow" :class="'drop_occupy_last'">
-                        <div class="drop_frame_title theme_change_green"  @click="themeFun('green')">
+                        <div class="drop_frame_title theme_change_green" @click="themeFun('green')">
                             <a>绿色</a>
                         </div>
-                        <div class="drop_frame_title theme_change_blue"  @click="themeFun('blue')">
+                        <div class="drop_frame_title theme_change_blue" @click="themeFun('blue')">
                             <a>蓝色</a>
                         </div>
-                        <div class="drop_frame_title theme_change_red"  @click="themeFun('red')">
+                        <div class="drop_frame_title theme_change_red" @click="themeFun('red')">
                             <a>粉色</a>
                         </div>
                     </div>
