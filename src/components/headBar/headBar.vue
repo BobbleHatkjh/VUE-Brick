@@ -1,6 +1,6 @@
 <template>
 
-    <div id="PageLabel" class="b_top_bar">
+    <div id="PageLabel" class="b_top_bar" @mouseover="bac_('in')" @mouseout="bac_('out')" :style="head_bac">
         <div class="label_logo">
             <div class="label_logo_img">
                 <img :src="logo" alt=""/>
@@ -17,9 +17,12 @@
                     <input @input="searchCon($event)" @keyup.enter="searchButton"/>
                 </label>
             </div>
+            <div class="label_search_drop" v-if="search_drop_show" @mouseover="search_drop('in')" @mouseout="search_drop('out')">
+                <slot></slot>
+            </div>
         </div>
-        <div class="label_router">
 
+        <div class="label_router">
             <div class="router_frame" v-for="(value , index) in router" @click="" @mouseover="value.show_ = !value.show_" @mouseout="value.show_ = !value.show_">
                 <div class="router_title">
                     <a :class="value.show_ && 'router_border'">{{ value.name }}</a>
@@ -34,12 +37,12 @@
             </div>
 
             <!--主题配置 -->
-            <div class="router_frame" v-if="themeConfig" @mouseover="themeShow = !themeShow" @mouseout="themeShow = !themeShow">
+            <div class="router_frame" v-if="themeConfig" @mouseover="theme_show = !theme_show" @mouseout="theme_show = !theme_show">
                 <div class="router_title theme_title">
                     <div class="theme_show_div"></div>
                 </div>
                 <div class="drop_occupy" :class="'drop_occupy_last'">
-                    <div class="drop_frame theme_drop_frame" v-show = "themeShow" :class="'drop_occupy_last'">
+                    <div class="drop_frame theme_drop_frame" v-show = "theme_show" :class="'drop_occupy_last'">
                         <div class="drop_frame_title theme_change_green" @click="themeFun('green')">
                             <a>绿色</a>
                         </div>
@@ -65,18 +68,52 @@
     import search_d from '../../../static/search_dark.png'
 
     export default {
-        name: 'TopBar',
+        name: 'HeadBar',
         props: ['logo','name','search','menuData','themeConfig','test'],
         data() {
             return {
                 router:[],
+                head_show: false,
+                head_bac: { backgroundColor: 'rgba(255,255,255,0.7)' },
                 search_img: search_d,
                 search_word:'',
-                themeShow: false,
+                search_drop_show: false,
+                focus_drop: false,
+                theme_show: false,
             };
         },
 
+
         methods:{
+            // 全局监听鼠标点击
+            click_(){
+                if(!this.focus_drop){
+                    this.search_drop_show = false;
+                    if(this.head_show === false){
+                        this.head_bac = { backgroundColor: 'rgba(255,255,255,0.7)' }
+                    }
+                }
+            },
+
+            // 聚焦背景
+            bac_(what){
+                if(what === 'in'){
+                    this.head_show = true;
+                    this.head_bac = { backgroundColor: 'white' }
+                } else {
+                    this.head_show = false;
+                    if(!this.search_drop_show){
+                        this.head_bac = { backgroundColor: 'rgba(255,255,255,0.7)' }
+                    }
+                }
+            },
+
+            //
+            search_drop(what){
+                what === 'in' ? this.focus_drop = true : this.focus_drop = false
+
+            },
+
             // 改变搜索颜色
             changeSearchImg(what){
                 if(what === 'in'){
@@ -113,7 +150,8 @@
 
             // 搜索按钮
             searchButton(){
-                this.$emit('search',this.search_word)
+                this.$emit('search',this.search_word);
+                this.search_drop_show = true
             },
 
             // 搜索输入框内容
@@ -178,6 +216,7 @@
         },
 
         created(){
+            window.addEventListener('click', this.click_);
 
             // 计算路由
             this.menuDataAnalyse();
@@ -199,8 +238,8 @@
         height: 60px;
         width: 100%;
         text-align: left;
-        background-color: white;
         box-shadow: 0 0 3px #D7D7D7;
+        transition: background-color 300ms;
     }
 
     .label_logo{
@@ -228,7 +267,8 @@
 
 
     .label_search{
-        display: flex;
+        display: block;
+        text-align: center;
         height: 100%;
         width: 190px;
         margin: 0 0 0 auto;
@@ -237,13 +277,25 @@
         display: flex;
         height: 30px;
         width: 173px;
-        margin: auto auto auto 0;
+        margin: 14px auto 6px 0;
         border-radius: 100px;
         border: 1px solid #D7D7D7;
     }
     .label_search_frame:hover{
-        @include Theme-Border(1px,$theme-color-green);
+        @include Theme-Border(1px,$theme-color-green,0.8);
     }
+    .label_search_drop{
+        height: 180px;
+        width: 138px;
+        margin: 0 auto auto 10px;
+        padding: 8px;
+        text-align: left;
+        background-color: white;
+        border-radius: 4px;
+        border: 1px solid #cdcdcd;
+        overflow: hidden;
+    }
+
 
     .search_img{
         display: flex;

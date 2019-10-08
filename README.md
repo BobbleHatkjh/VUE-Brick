@@ -16,42 +16,49 @@ _'Library'is a library of derivative components of 'Brick'_
 
 _'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Brick Library' will bring some convenience to your work._
 
+<br/>
 
+<a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">GitHub page</a>  &emsp;<br/>
+<a href="https://www.npmjs.com/package/b-library" target="_blank">NPM page</a>
 
-> <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">GitHub</a>  &emsp;&emsp;  <a href="https://www.npmjs.com/package/b-library" target="_blank">NPM</a>
-
+>You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).<br/>
+><a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
 
 
 <br/>
 
-``` 
-A            // √    
-Button       // √    
-Dot          // √
-Slot         // √    
-Router       // In preparation    
-Footer       // √
-HeadBar      // X
-TopBar       // √    
-Inclusion    // √
-Login        // In preparation
-PageLabel    // √
-Register     // In preparation    
-Tips         // In preparation    
-Notice       // √
-NavigationBar(vertical)   // √
-Title(long image)         // √
-Link(language switch)     // √
-Page template             // In preparation 
+- Components
+  - [x] A
+  - [x] Button
+  - [x] Dot
+  - [x] Footer
+  - [x] HeadBar
+  - [x] Inclusion
+  - [ ] Login
+  - [ ] Link(language switch)
+  - [x] NavigationBar(vertical)
+  - [x] Notice
+  - [x] PageLabel
+  - [ ] Page template 
+  - [ ] Register
+  - [ ] Router
+  - [x] Slot
+  - [ ] TabBar
+  - [ ] Tips
+  - [x] Title(long image)   
   
-Theme Configuration       // √   
-Test mode                 // test
-CSS Overall control       // In preparation
-Parallax effect           // In preparation
-``` 
+<br/>
+  
+- Global function
+    - [ ] CSS Overall control
+    - [ ] Parallax effect 
+    - [ ] Test mode 
+    - [x] Theme Configuration
 
 
 <br/>
+
+
 
 ###introduction of <a style="color: #b96d27">import</a>
 
@@ -139,12 +146,6 @@ Vue.component('Footer', Footer);
 
 > ! The project is still in the development stage and the functionality of many components is still incomplete. After entering the 1.0 public version, demo and API guides will be launched simultaneously on the official website of 'Brick'.
 
-<br/>
-
->You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).
-
-
-> <a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
 
 
 <br/>

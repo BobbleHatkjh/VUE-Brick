@@ -1,7 +1,7 @@
 <template>
     <div ref="foot" :class="footFold ? 'foot':'foot_unfold'" :style="footer_height" @mouseover="hov(1)" @mouseout="hov(0)">
         <div class="up" v-if="footFold" :style="footer_trigger_style">
-            <img src="../../../static/up_white.png" alt="up" class="up_img">
+            <img :src="drop_img" alt="up" class="up_img">
         </div>
         <div class="foot_con">
             <div class="foot_logo">
@@ -59,6 +59,7 @@
 
 
 <script>
+    import up_white from '../../../static/up_white.png'
 
     export default {
         name: 'Footer',
@@ -67,6 +68,7 @@
             return {
                 footer_trigger_style: { margin: '-60px auto 0 auto',opacity:'' },
                 footer_height:{ height:'' },
+                drop_img: up_white,
                 text_word: ''
             }
         },

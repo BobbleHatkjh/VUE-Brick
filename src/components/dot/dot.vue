@@ -1,6 +1,6 @@
 <template>
 
-    <div id="Dot" class="b_dot" :style="b_dot_style" :class="backGroundColor === 'white' && 'b_dot_white'">
+    <div id="Dot" class="b_dot" @click="callBack_" :style="b_dot_style" :class="backGroundColor === 'white' && 'b_dot_white'">
         <div class="b_dot_slot">
             <slot></slot>
         </div>
@@ -21,11 +21,18 @@
             }
         },
         methods:{
+            // 确定主题格式
             filletSelect (){
                 if(!this.fillet){
                     this.b_dot_style.borderRadius = '5px'
                 }
+            },
+
+            // 点击时的回调
+            callBack_(){
+                this.$emit('return','click');
             }
+
         },
         created() {
             this.filletSelect();

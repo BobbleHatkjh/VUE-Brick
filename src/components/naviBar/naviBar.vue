@@ -28,7 +28,7 @@
 <script>
     export default {
         name: 'NaviBar',
-        props: ['naviBarData','link','test'],
+        props: ['menuData','link','test'],
         data(){
             return{
                 naviRouter: [],   // 路由数据
@@ -52,7 +52,7 @@
             naviData(){
                 // 解析目录
                 const routerData = [];
-                this.naviBarData.map(
+                this.menuData.map(
                     (item) => {
                         const newData = {};
                         newData.show_ = false;
@@ -145,7 +145,7 @@
         border-left: 3px solid rgba(0,0,0,0);
         border-right: 3px solid rgba(0,0,0,0);
         background-color: rgba($BacColor,0.08);
-        box-shadow: 0 0 5px rgba($BacColor,0.08);
+        box-shadow: 0 0 3px rgba($BacColor,0.08);
     }
     .left_frame:hover{
         cursor: pointer;
@@ -154,7 +154,7 @@
         @include Theme-BorderLeft(3px,$theme-color-green);
         @include Theme-BorderRight(3px,$theme-color-green);
         background-color: white;
-        @include Theme-BoxShadow(5px,$theme-color-green,0.6);
+        @include Theme-BoxShadow(3px,$theme-color-green,0.6);
     }
     .left_frame a{
         margin: auto;
