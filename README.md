@@ -1,16 +1,20 @@
 <br/>
 
+<p align="center">
+    <img width="400" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/100ll.png"/>
+</p>
 
-![brick](https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/100ll.png)
 
-_'Library'is a library of derivative components of 'Brick'_
+<br/>
+
 
 <img src="https://img.shields.io/npm/v/b-library.svg" alt="npm">
 <img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg" alt="Build Status">
 <img src="https://img.shields.io/npm/l/vue.svg" alt="License">
-       
+     
+_'Library'is a library of derivative components of 'Brick'_
 
-<a></a>  
+ 
  
 <br/>
 
@@ -28,44 +32,48 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
 <br/>
 
 - Components
-  - [x] A
-  - [x] Button
-  - [x] Dot
-  - [x] Footer
-  - [x] HeadBar
-  - [x] Inclusion
-  - [ ] Login
-  - [ ] Link(language switch)
-  - [x] NavigationBar(vertical)
-  - [x] Notice
-  - [x] PageLabel
-  - [ ] Page template 
-  - [ ] Register
-  - [ ] Router
-  - [x] Slot
-  - [ ] TabBar
-  - [ ] Tips
-  - [x] Title(long image)   
+    - [x] A
+    - [ ] Account module
+    - [x] Banner
+    - [x] Button
+    - [x] Dot
+    - [x] Footer
+    - [x] HeadBar      
+    - [x] Inclusion
+    - [ ] Login
+    - [ ] Language switch
+    - [x] Notice
+    - [x] PageLabel 
+    - [ ] Register
+    - [ ] Router
+    - [x] SideBar
+    - [x] Slot
+    - [ ] TabBar
+    - [ ] Tips   
   
 <br/>
   
-- Global function
-    - [ ] CSS Overall control
-    - [ ] Parallax effect 
-    - [ ] Test mode 
+- Global Function
+    - [x] CSS Overall Control (In testing)
+    - [ ] Parallax Effect 
+    - [ ] Test Mode 
     - [x] Theme Configuration
 
+<br/>
 
+- Description File
+    - [ ] Define Type Files
+    
 <br/>
 
 
 
-###introduction of <a style="color: #b96d27">import</a>
+### introduction of <a style="color: #b96d27">import</a>
 
 >Few components - Recommended ways of import
 ```
 <template>
-    <div class="index">
+    <div>
  
         <Notice :noticeData="myData" />
         
@@ -87,7 +95,7 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
     }
 </script>
 
-// 这是在引入的组件相对较少的情况下推荐的方案，直接在页面内引入简单快捷又很便于维护 
+// 这是在引入的组件相对较少的情况下推荐的方案，在页面内直接引入简单快捷又很便于维护 
 ```
 
 <br/>
@@ -103,7 +111,7 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
         |...
 
 // 在router下的index.js文件批量引入所需的组件，这样又省力，又便于您可能会在store里关联进行状态管理   
-// 这一步需要 vue-router 的支持，Library带有这个支持，不过需要您在类似的项目结构里手动配置     
+// 这一步需要 vue-router 的支持，并需要您在类似的项目结构里手动配置     
 ```
 
 <br/>
@@ -126,14 +134,14 @@ Vue.component('Footer', Footer);
 
 <br/>
 
->src/xxx/xxx.vue
+>src/xxx/xxx.vue *example*
 
 ```
 <template>
     <div class="index">
  
-        <HeadBar :menuData__="menuData" :pattern="'simple'" />
-        <Footer :logo="logo" :footer__="footerData" :support__="supportList"/>
+        <HeadBar :menuData="menuData" @return="callBack" />
+        <Footer :logo="logo" :grid="true" :support="supportList"/>
         
     </div>
 </template>

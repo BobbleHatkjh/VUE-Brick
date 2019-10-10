@@ -10,7 +10,7 @@
 
 <script>
     export default {
-        name: 'Tittle',
+        name: 'Banner',
         props: ['Img','title'],
         data(){
             return{

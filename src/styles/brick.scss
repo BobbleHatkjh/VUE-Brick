@@ -7,9 +7,17 @@ $ThemeBorder: 12px;
 
 
 // 更换主题版本
-$theme-color-green:#42b983;        /* 主题颜色 vue绿 */
+$theme-color-green:#42b983;        /* 主题颜色   vue绿 */
 $theme-color-red: #fb7299;         /* 更换的颜色  B站粉 */
 $theme-color-blue: #1378ff;        /* 更换的颜色   */
+
+
+@mixin Theme-Fill($color,$op:0.8){    /*通过该函数设置字体颜色，后期方便统一管理；*/
+  fill : rgba($color,$op);
+  [data-theme="green"] & {fill: rgba($theme-color-green,$op)}
+  [data-theme="red"] & {fill: rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {fill: rgba($theme-color-blue,$op)}
+}
 
 @mixin Theme-Bac($color,$op:1){    /*通过该函数设置字体颜色，后期方便统一管理；*/
   background-color : rgba($color,$op);

@@ -8,16 +8,18 @@
             <a>{{name}}</a>
         </div>
 
-        <div class="label_search" >
-            <div class="label_search_frame">
-                <div class="search_img" @click="searchButton" @mouseover="changeSearchImg('in')" @mouseout="changeSearchImg('out')">
-                    <img :src="search_img" alt="" draggable="false"/>
+        <div class="label_search">
+            <div class="label_search_frame" @mouseover="search_focus('in')" @mouseout="search_focus('out')">
+                <div class="search_img" @click="searchButton">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#iconsearch"></use>
+                    </svg>
                 </div>
                 <label class="search_label_d">
                     <input @input="searchCon($event)" @keyup.enter="searchButton"/>
                 </label>
             </div>
-            <div class="label_search_drop" v-if="search_drop_show" @mouseover="search_drop('in')" @mouseout="search_drop('out')">
+            <div class="label_search_drop" v-if="search_drop_show" @mouseover="search_focus('in')" @mouseout="search_focus('out')">
                 <slot></slot>
             </div>
         </div>
@@ -29,7 +31,7 @@
                 </div>
                 <div class="drop_occupy" :class="!themeConfig && index === router.length -1 && 'drop_occupy_last'">
                     <div class="drop_frame" v-show = "value.lab.length !== 0 && value.show_" :class="!themeConfig && index === router.length -1 && 'drop_occupy_last'">
-                        <div class="drop_frame_title" v-for="(valueIn , indexIn) in value.lab" @click="userClick(valueIn.onclick,valueIn.To)">
+                        <div class="drop_frame_title" v-for="(valueIn) in value.lab" @click="userClick(valueIn.onclick,valueIn.To)">
                             <a>{{ valueIn.name }}</a>
                         </div>
                     </div>
@@ -64,8 +66,7 @@
 
 
 <script>
-    import search_w from '../../../static/search_white.png'
-    import search_d from '../../../static/search_dark.png'
+    import '../../styles/iconfont.js'
 
     export default {
         name: 'HeadBar',
@@ -73,13 +74,12 @@
         data() {
             return {
                 router:[],
-                head_show: false,
+                head_show: false,        // 是否在聚焦背景
                 head_bac: { backgroundColor: 'rgba(255,255,255,0.7)' },
-                search_img: search_d,
                 search_word:'',
-                search_drop_show: false,
-                focus_drop: false,
-                theme_show: false,
+                search_drop_show: false, // 搜索下拉框状态
+                focus_search: false,     // 是否在聚焦搜索
+                theme_show: false
             };
         },
 
@@ -87,7 +87,7 @@
         methods:{
             // 全局监听鼠标点击
             click_(){
-                if(!this.focus_drop){
+                if(!this.focus_search){
                     this.search_drop_show = false;
                     if(this.head_show === false){
                         this.head_bac = { backgroundColor: 'rgba(255,255,255,0.7)' }
@@ -108,19 +108,9 @@
                 }
             },
 
-            //
-            search_drop(what){
-                what === 'in' ? this.focus_drop = true : this.focus_drop = false
-
-            },
-
-            // 改变搜索颜色
-            changeSearchImg(what){
-                if(what === 'in'){
-                    this.search_img = search_w
-                } else {
-                    this.search_img = search_d
-                }
+            // 判定是否在聚焦搜索
+            search_focus(what){
+                what === 'in' ? this.focus_search = true : this.focus_search = false
             },
 
             // 用户点击了选项
@@ -230,6 +220,18 @@
 <style lang="scss">
     @import '../../styles/brick';
 
+    .icon {
+        width: 18px; height: 18px;
+        margin: auto;
+        vertical-align: -0.15em;
+        fill: #D7D7D7; /* d7d7d7 */
+        overflow: hidden;
+    }
+    .icon:hover{
+        cursor: pointer;
+        @include Theme-Fill($theme-color-green)
+    }
+
     .b_top_bar{
         position: fixed;
         top: 0;
@@ -285,7 +287,8 @@
         @include Theme-Border(1px,$theme-color-green,0.8);
     }
     .label_search_drop{
-        height: 180px;
+        min-height: 10px;
+        max-height: 200px;
         width: 138px;
         margin: 0 auto auto 10px;
         padding: 8px;
@@ -293,7 +296,17 @@
         background-color: white;
         border-radius: 4px;
         border: 1px solid #cdcdcd;
-        overflow: hidden;
+        overflow: auto;
+    }
+    .label_search_drop::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 8px;  /*高宽分别对应横竖滚动条的尺寸*/
+        height: 8px;
+    }
+    .label_search_drop::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 5px;
+        background: #878787;
     }
 
 
@@ -304,10 +317,6 @@
         margin: auto 2px;
         border-radius: 50px;
         overflow: hidden;
-    }
-    .search_img:hover{
-        cursor: pointer;
-        @include Theme-Bac($theme-color-green,0.8);
     }
     .search_img img{
         height: 80%;
@@ -325,6 +334,8 @@
         width: 100%;
         background-color: rgba(255,255,255,0);
     }
+
+
 
 
 

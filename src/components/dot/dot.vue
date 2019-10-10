@@ -1,6 +1,6 @@
 <template>
 
-    <div id="Dot" class="b_dot" @click="callBack_" :style="b_dot_style" :class="backGroundColor === 'white' && 'b_dot_white'">
+    <div id="Dot" class="b_dot" @click="callBack_" :style="styles && styles" :class="backGroundColor === 'white' && 'b_dot_white'">
         <div class="b_dot_slot">
             <slot></slot>
         </div>
@@ -12,22 +12,13 @@
 <script>
     export default {
         name: 'Dot',
-        props: ['fillet','backGroundColor'],
+        props: ['styles','backGroundColor'],
         data(){
             return{
-                b_dot_style:{
-                    borderRadius:'100px'
-                }
+
             }
         },
         methods:{
-            // 确定主题格式
-            filletSelect (){
-                if(!this.fillet){
-                    this.b_dot_style.borderRadius = '5px'
-                }
-            },
-
             // 点击时的回调
             callBack_(){
                 this.$emit('return','click');
@@ -35,7 +26,6 @@
 
         },
         created() {
-            this.filletSelect();
 
         }
 
@@ -54,6 +44,7 @@
         height: 54px;
         width: 54px;
         color: white;
+        border-radius: 100px;
         background-color: rgba($BacColor, 0.6);
         box-shadow: 0 0 8px rgba($BacColor, 0.4);
         overflow: hidden;

@@ -1,12 +1,12 @@
 <template>
 
-    <div id="left" class="left_bar">
+    <div id="left" class="side_bar" :style="styles && styles">
         <div class="occupy">
 
         </div>
 
 
-        <div class="div_frame" v-for="(value, index) in naviRouter" :key="value.name">
+        <div class="div_frame" v-for="(value, index) in sideRouter" :key="value.name">
             <div class="left_frame" @click="value.lab.length === 0 ? turn(value.path,index) : value.show_ = !value.show_" :class="(value.show_ && value.lab.length !== 0) && 'drop_off_css'">
                 <a :class="select_open[0] === index && 'left_frame_select_color'">{{ value.name }}</a>
             </div>
@@ -27,11 +27,11 @@
 
 <script>
     export default {
-        name: 'NaviBar',
-        props: ['menuData','link','test'],
+        name: 'SideBar',
+        props: ['menuData','styles','link','test'],
         data(){
             return{
-                naviRouter: [],   // 路由数据
+                sideRouter: [],   // 路由数据
                 select_open: [99,99],  // 打开的位置
             }
         },
@@ -49,7 +49,7 @@
                 this.select_open = [index,indexIn];
             },
 
-            naviData(){
+            menuData(){
                 // 解析目录
                 const routerData = [];
                 this.menuData.map(
@@ -85,7 +85,7 @@
                         routerData.push(newData);
                     }
                 );
-                this.naviRouter = routerData;
+                this.sideRouter = routerData;
                 this.test && console.log(routerData);
             },
 
@@ -94,7 +94,7 @@
 
         created(){
             // 解析目录
-            this.naviData();
+            this.menuData();
 
             // 主题设置
             // this.Theme = STo.ThemeConfig;
@@ -116,7 +116,7 @@
     .occupy{
         height: 30px;
     }
-    .left_bar{
+    .side_bar{
         text-align: center;
         height: 100%;
         width: 100%;
@@ -124,9 +124,14 @@
         margin: 0 auto auto auto;
         overflow: auto;
     }
-    .left_bar::-webkit-scrollbar{
-        width: 0;     /*高宽分别对应横竖滚动条的尺寸*/
-        height: 0;
+    .side_bar::-webkit-scrollbar{
+        width: 8px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 8px;
+    }
+    .side_bar::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 5px;
+        background: #878787;
     }
 
     .div_frame{
@@ -187,7 +192,7 @@
         margin: 0 0 auto auto;
         font-size: 14px;
         @include Theme-BorderRight(3px,$theme-color-green);
-        animation: table_navi 0.25s infinite;
+        animation: table_side 0.25s infinite;
         animation-iteration-count:1;
         color: rgba($BacColor,0.6);
         background-color: rgba($BacColor,0.03);
@@ -224,7 +229,7 @@
 
 
 
-    @keyframes table_navi
+    @keyframes table_side
     {
         from { height: 22px }
         to { height: 30px }

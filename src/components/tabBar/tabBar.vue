@@ -1,6 +1,6 @@
 <template>
 
-    <div id="TabBar" @click="hrefJump()">
+    <div id="TabBar" class="b_tab_bar" :style="styles && styles">
         <slot></slot>
     </div>
 
@@ -9,7 +9,7 @@
 <script>
     export default {
         name: 'TabBar',
-        props: ['href'],
+        props: ['menuData', 'styles'],
         data() {
             return {
 
@@ -38,15 +38,12 @@
 <style lang="scss">
     @import '../../styles/brick';
 
-    .b_a{
-        height: fit-content;
-        width: fit-content;
-        @include Theme-Color($theme-color-green);
+    .b_tab_bar{
+        height: 60px;
+        width: 200px;
+        background-color: #42b983;
     }
-    .b_a:hover{
-        cursor: pointer;
-        font-weight: bold;
-    }
+
 
 
 </style>

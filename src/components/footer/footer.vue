@@ -1,5 +1,5 @@
 <template>
-    <div ref="foot" :class="footFold ? 'foot':'foot_unfold'" :style="footer_height" @mouseover="hov(1)" @mouseout="hov(0)">
+    <div ref="foot" :class="footFold ? 'foot':'foot_unfold'" :style="[footer_height,styles && styles]" @mouseover="hov(1)" @mouseout="hov(0)">
         <div class="up" v-if="footFold" :style="footer_trigger_style">
             <img :src="drop_img" alt="up" class="up_img">
         </div>
@@ -28,7 +28,7 @@
 
                         </div>
 
-                        <div class="theme_drop_color">
+                        <div class="theme_drop_color" :class="!grid && 'grid_drop_color'">
                             <div class="theme_drop_green" @click="themeFun('green')"></div>
                             <div class="theme_drop_blue" @click="themeFun('blue')"></div>
                             <div class="theme_drop_red" @click="themeFun('red')"></div>
@@ -63,7 +63,7 @@
 
     export default {
         name: 'Footer',
-        props: ['logo', 'support', 'trigger', 'footFold', 'themeConfig', 'QRCode', 'grid'],
+        props: ['styles','logo','support','trigger','footFold','themeConfig','QRCode','grid'],
         data() {
             return {
                 footer_trigger_style: { margin: '-60px auto 0 auto',opacity:'' },
@@ -319,6 +319,10 @@
         width: 88.6%;
         /* 134 */
         margin: 16px auto 0 auto;
+    }
+    .grid_drop_color{
+        height: 31px;
+        margin: 25px auto 0 auto;
     }
 
     .theme_drop_green{
