@@ -2,9 +2,8 @@
 
     <div id="left" class="side_bar" :style="styles && styles">
         <div class="occupy">
-
+            <slot></slot>
         </div>
-
 
         <div class="div_frame" v-for="(value, index) in sideRouter" :key="value.name">
             <div class="left_frame" @click="value.lab.length === 0 ? turn(value.path,index) : value.show_ = !value.show_" :class="(value.show_ && value.lab.length !== 0) && 'drop_off_css'">
@@ -49,7 +48,7 @@
                 this.select_open = [index,indexIn];
             },
 
-            menuData(){
+            menuDataAnalyse(){
                 // 解析目录
                 const routerData = [];
                 this.menuData.map(
@@ -94,7 +93,7 @@
 
         created(){
             // 解析目录
-            this.menuData();
+            this.menuDataAnalyse();
 
             // 主题设置
             // this.Theme = STo.ThemeConfig;
@@ -114,7 +113,7 @@
     @import '../../styles/brick';
 
     .occupy{
-        height: 30px;
+        min-height: 30px;
     }
     .side_bar{
         text-align: center;

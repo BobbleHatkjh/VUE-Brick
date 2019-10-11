@@ -239,10 +239,10 @@
     }
 
     .foot_input_textarea {
-        height: 172px;
-        width: 552px;
+        height: 200px;
+        width: 580px;
         margin: 0 auto auto 8px;
-        padding: 14px;
+        padding: 0; /* 14 */
         color: white;
         border: none;
         font-size: 16px;

@@ -1,6 +1,6 @@
 {
   "name": "b-library",
-  "version": "0.8.18",
+  "version": "0.8.19",
   "description": "Vue Component Library, Customize your website like building blocks",
   "main": "dist/brick-library.min.js",
   "scripts": {
@@ -9,10 +9,11 @@
     "build": "webpack"
   },
   "keywords": [
-    "vue",
-    "library",
     "components",
-    "brick"
+    "brick",
+    "library",
+    "middle office",
+    "vue"
   ],
   "author": "bobblehat",
   "license": "MIT",

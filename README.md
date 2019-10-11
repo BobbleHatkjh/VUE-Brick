@@ -1,22 +1,21 @@
+
 <br/>
 
 <p align="center">
-    <img width="400" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/100ll.png"/>
+    <img width="400" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/100lllogo.png"/>
 </p>
 
-
 <br/>
 
+<p align="center">
+    <img src="https://img.shields.io/npm/v/b-library.svg" alt="npm">
+    <img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg" alt="Build Status">
+    <img src="https://img.shields.io/npm/l/vue.svg" alt="License">
+</p> 
 
-<img src="https://img.shields.io/npm/v/b-library.svg" alt="npm">
-<img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg" alt="Build Status">
-<img src="https://img.shields.io/npm/l/vue.svg" alt="License">
-     
-_'Library'is a library of derivative components of 'Brick'_
-
- 
- 
 <br/>
+    
+_'Library'is a library of derivative components of 'Brick'_<br/>
 
 _'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Brick Library' will bring some convenience to your work._
 
@@ -158,5 +157,15 @@ Vue.component('Footer', Footer);
 
 <br/>
 
+>The 'brick-library' is still under development, If you have any suggestions or find any bugs, I will be appreciate that if you could write a letter to my mailbox:<br/>
+>3206633623@qq.com
+
+<br/>
+
+<br/>
+
+
+<!--
 Preview of the rest of the components:
 ![Img](https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/preview.png)
+-->

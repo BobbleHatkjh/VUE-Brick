@@ -2,8 +2,6 @@
 
     <div id="Inclusion" class="b_inclusion" >
 
-
-
         <div class="b_inclusion_line_frame" v-for="(value , index) in Data__">
 
             <div class="b_inclusion_con_frame" @click="hrefJump(value.info[0].url)">
