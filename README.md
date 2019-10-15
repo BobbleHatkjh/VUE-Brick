@@ -21,8 +21,8 @@
 <br/>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="155" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a>
-    <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank"><img width="200" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/github.png"/></a> &nbsp;&nbsp;
+    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="150" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a>
+    <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank"><img width="155" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/githubLogo.png"/></a> &nbsp;&nbsp;
 </p>
 
 <br/>
