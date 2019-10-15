@@ -8,6 +8,7 @@
             <a>{{name}}</a>
         </div>
 
+        <!-- 搜索框 -->
         <div class="label_search">
             <div class="label_search_frame" @mouseover="search_focus('in')" @mouseout="search_focus('out')">
                 <div class="search_img" @click="searchButton">
@@ -38,7 +39,7 @@
                 </div>
             </div>
 
-            <!--主题配置 -->
+            <!-- 主题配置 -->
             <div class="router_frame" v-if="themeConfig" @mouseover="theme_show = !theme_show" @mouseout="theme_show = !theme_show">
                 <div class="router_title theme_title">
                     <div class="theme_show_div"></div>
@@ -76,6 +77,7 @@
                 router:[],
                 head_show: false,        // 是否在聚焦背景
                 head_bac: { backgroundColor: 'rgba(255,255,255,0.7)' },
+                search_need: true,       // 是否需要搜索框
                 search_word:'',
                 search_drop_show: false, // 搜索下拉框状态
                 focus_search: false,     // 是否在聚焦搜索
@@ -175,7 +177,7 @@
                             newData.To = item.path
                         } else {
                             newData.onclick = 'toOut';
-                            newData.To = item.linkUrl
+                            newData.To = item['linkUrl']
                         }
                         newData.lab = [];
                         if(item.lab){
@@ -189,7 +191,7 @@
                                         newDataIn.To = itemIn.path
                                     } else {
                                         newDataIn.onclick = 'toOut';
-                                        newDataIn.To = itemIn.linkUrl
+                                        newDataIn.To = itemIn['linkUrl']
                                     }
                                     newData.lab.push(newDataIn);
                                 }

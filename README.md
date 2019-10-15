@@ -1,11 +1,14 @@
 
 <br/>
 
+<br/>
+
+
 <p align="center">
     <img width="400" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/100lllogo.png"/>
 </p>
 
-<br/>
+
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/b-library.svg" alt="npm">
@@ -33,7 +36,7 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
 - Components
     - [x] A
     - [ ] Account module
-    - [x] Banner
+    - [x] Banner (In testing)
     - [x] Button
     - [x] Dot
     - [x] Footer
@@ -47,7 +50,7 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
     - [ ] Router
     - [x] SideBar
     - [x] Slot
-    - [ ] TabBar
+    - [x] TabBar
     - [ ] Tips   
   
 <br/>
@@ -57,6 +60,7 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
     - [ ] Parallax Effect 
     - [ ] Test Mode 
     - [x] Theme Configuration
+    - [ ] iconFont library
 
 <br/>
 
@@ -133,7 +137,7 @@ Vue.component('Footer', Footer);
 
 <br/>
 
->src/xxx/xxx.vue *example*
+>src/xxx/xxx.vue 
 
 ```
 <template>

@@ -61,7 +61,7 @@
                             newData.To = item.path
                         } else {
                             newData.onclick = 'toOut';
-                            newData.To = item.linkUrl
+                            newData.To = item['linkUrl']
                         }
                         newData.lab = [];
                         if(item.lab){
@@ -75,7 +75,7 @@
                                         newDataIn.To = itemIn.path
                                     } else {
                                         newDataIn.onclick = 'toOut';
-                                        newDataIn.To = itemIn.linkUrl
+                                        newDataIn.To = itemIn['linkUrl']
                                     }
                                     newData.lab.push(newDataIn);
                                 }
