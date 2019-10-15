@@ -17,6 +17,14 @@
 </p> 
 
 <br/>
+
+
+<p align="center">
+    <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank"><img width="200" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/github.png"/></a> &nbsp;&nbsp;
+    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="155" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a>
+</p>
+
+<br/>
     
 _'Library'is a library of derivative components of 'Brick'_<br/>
 
@@ -24,10 +32,6 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
 
 <br/>
 
-<p align="center">
-    <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank"><img width="125" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/github.png"/></a> &nbsp;&nbsp;
-    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="100" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a>
-</p>
 
 >You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).<br/>
 ><a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
