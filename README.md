@@ -24,6 +24,10 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
 
 <br/>
 
+<div style="height: 50px;width: 120px;border:1px solid #66ccff">
+123
+</div>
+
 ╭──────────╮<br/>
 │ <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">GitHub page</a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  &emsp;│<br/>
 │ <a href="https://www.npmjs.com/package/b-library" target="_blank">NPM page</a><br/>
