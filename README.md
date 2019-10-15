@@ -24,19 +24,10 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
 
 <br/>
 
-<table>
-    <tr>
-        <td>
-            <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank">GitHub page</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="https://www.npmjs.com/package/b-library" target="_blank">NPM &emsp;&emsp; page</a>
-        </td>
-    </tr>
-</table>
-
+<p align="center">
+    <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank"><img width="125" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/github.png"/></a> &nbsp;&nbsp;
+    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="100" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a>
+</p>
 
 >You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).<br/>
 ><a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
