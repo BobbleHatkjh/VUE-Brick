@@ -11,19 +11,19 @@
 
 
 <p align="center">
-    <img src="https://img.shields.io/npm/v/b-library.svg" alt="npm">
+    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img src="https://img.shields.io/npm/v/b-library.svg" alt="npm"></a>
     <img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg" alt="Build Status">
-    <img src="https://img.shields.io/npm/l/vue.svg" alt="License">
+    <a href="https://github.com/BobbleHatkjh/VUE-Brick/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/npm/l/b-library.svg" alt="License"></a>
 </p> 
 
 <br/>
 
-<br/>
-
 <p align="center">
-    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="140" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a> &nbsp;&nbsp;
+    <a href="https://www.npmjs.com/package/b-library" target="_blank"><img width="140" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/npm.png"/></a> &nbsp;
     <a href="https://github.com/BobbleHatkjh/VUE-Brick" target="_blank"><img width="210" alt="" src="https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/githubLogo.png"/></a> 
 </p>
+
+
 
 <br/>
     
@@ -32,6 +32,7 @@ _'Library'is a library of derivative components of 'Brick'_<br/>
 _'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Brick Library' will bring some convenience to your work._
 
 <br/>
+
 
 
 >You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).<br/>
