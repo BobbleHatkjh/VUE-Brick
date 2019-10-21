@@ -34,12 +34,15 @@ _'Library'makes a whole set of functional class 'Vue' component libraries based 
 <br/>
 
 
+<!--
 
 >You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).<br/>
 ><a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
 
 
 <br/>
+
+-->
 
 - Components
     - [x] A

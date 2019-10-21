@@ -6,9 +6,30 @@
         </div>
 
         <div class="div_frame" v-for="(value, index) in sideRouter" :key="value.name">
-            <div class="left_frame" @click="value.lab.length === 0 ? turn(value.path,index) : value.show_ = !value.show_" :class="(value.show_ && value.lab.length !== 0) && 'drop_off_css'">
-                <a :class="select_open[0] === index && 'left_frame_select_color'">{{ value.name }}</a>
+            <div
+                    class="left_frame"
+                    @click="value.lab.length === 0 ? turn(value.path,index) : value.show_ = !value.show_"
+                    :class="(value.show_ && value.lab.length !== 0) && 'drop_off_css'"
+                    @mouseover="value.hover_ = !value.hover_"
+                    @mouseout="value.hover_ = !value.hover_"
+            >
+                <div
+                        class="left_frame_animate"
+                        :class="[( value.hover_) && 'left_frame_animate_hover',value.show_ && 'left_frame_animate_hover']"
+                >
+                </div>
+
+                <div class="left_frame_word">
+                    <a
+                            :class="select_open[0] === index && (value.show_ ? 'left_frame_select_color_w' : 'left_frame_select_color_t')"
+                            :style="value.hover_ && { color:'white' }"
+                    >
+                        {{ value.name }}
+                    </a>
+                </div>
+
             </div>
+
             <div class="left_frame_drop" v-show = "value.show_">
                 <div class="drop_paste">
                     <div class="left_frame_drop_mid" v-for="(valueIn, indexIn) in value.lab" @click="turn(valueIn.onclick,valueIn.To,index,indexIn)" :class="indexIn === value.lab.length - 1 && 'drop_last_css'">
@@ -18,6 +39,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 
@@ -55,6 +78,7 @@
                     (item) => {
                         const newData = {};
                         newData.show_ = false;
+                        newData.hover_ = false;
                         newData.name = item.name;
                         if(item.path !== undefined && item.path !== ''){
                             newData.onclick = 'toTurn';
@@ -116,6 +140,7 @@
         min-height: 30px;
     }
     .side_bar{
+        position: relative;
         text-align: center;
         height: 100%;
         width: 100%;
@@ -139,45 +164,63 @@
         margin: 20px auto;
     }
     .left_frame{
-        display: flex;
+        position: relative;
+        z-index: 1;
+        display: block;
         height: 34px;
         width: 100%;
         margin: 0 auto;
+        text-align: center;
         color: rgba($BacColor,0.6);
         font-weight: bolder;
         border-radius: $ThemeBorder;
-        border-left: 3px solid rgba(0,0,0,0);
-        border-right: 3px solid rgba(0,0,0,0);
         background-color: rgba($BacColor,0.08);
         box-shadow: 0 0 3px rgba($BacColor,0.08);
+        overflow: hidden;
     }
     .left_frame:hover{
         cursor: pointer;
-        transition: box-shadow 200ms, background-color 200ms;
-        @include Theme-Color($theme-color-green);
-        @include Theme-BorderLeft(3px,$theme-color-green);
-        @include Theme-BorderRight(3px,$theme-color-green);
-        background-color: white;
-        @include Theme-BoxShadow(3px,$theme-color-green,0.6);
+        color: white;
     }
-    .left_frame a{
+    .left_frame_animate{
+        position: absolute;
+        display: block;
+        z-index: 2;
+        transition: width 350ms;
+        height: 100%;
+        width: 0;
+        @include Theme-Bac($theme-color-green)
+    }
+    .left_frame_animate_hover{
+        width: 100%;
+    }
+    .left_frame_word{
+        position: absolute;
+        display: flex;
+        z-index: 3;
+        height: 100%;
+        width: 100%;
+    }
+    .left_frame_word a{
+        transition: color 350ms;
         margin: auto;
     }
+
     .drop_off_css{
         border-bottom-right-radius: 0;
-        @include Theme-BorderLeft(3px,$theme-color-green);
-        @include Theme-BorderRight(3px,$theme-color-green);
     }
-    .left_frame_select_color{
+    .left_frame_select_color_t{
         @include Theme-Color($theme-color-green);
+    }
+    .left_frame_select_color_w{
+        color: white;
     }
 
 
     .left_frame_drop{
         display: flex;
         width: 100%;
-        margin: 0 -3px 0 auto;
-        -webkit-margin-start: 3px;
+        margin: 0 0 0 auto;
     }
     .drop_paste{
         display: block;
@@ -190,7 +233,6 @@
         width: 100%;
         margin: 0 0 auto auto;
         font-size: 14px;
-        @include Theme-BorderRight(3px,$theme-color-green);
         animation: table_side 0.25s infinite;
         animation-iteration-count:1;
         color: rgba($BacColor,0.6);
