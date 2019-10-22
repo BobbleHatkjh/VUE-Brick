@@ -64,6 +64,7 @@
 
 <style lang="scss">
   @import '../../styles/brick';
+  @import '../../styles/swiper-css/swiper.css';
 
   .roll_container_notice{
     position: fixed;

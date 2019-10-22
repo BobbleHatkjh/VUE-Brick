@@ -27,18 +27,30 @@
 
 <br/>
     
-_'Library'is a library of derivative components of 'Brick'_<br/>
+_'Brick-Library' is a Vue component library_<br/>
+
+Do you find it too boring to write repetitive work when writing Vue projects? Every project has to write headers and footers repeatedly?<br/>
+
+<!--
 
 _'Library'makes a whole set of functional class 'Vue' component libraries based on the common functions of programmers, whether small to 'A' tags, large to automated'HeadBar' with'router'and dynamic effects, or templates for the entire page,'Library' has everything. We hope 'Brick Library' will bring some convenience to your work._
 
 <br/>
+
+-->
+
+Now Brick-Library is fresh! You don't have to repeat many functional components anymore, we makes a whole set of functional class 'Vue' component libraries based on the common functional of programmers. you can build your entire customized website in the time of putting together a fingertip building block. Download and Import the components you need in the package, simply add them to your Vue project, and the wonderful content will be presented in a moment.
+
+##
+
+<br/>
+
 
 
 <!--
 
 >You can visit the following website to give a rough preview of the old version of 'Library' (some components are different, but the overall idea is the same).<br/>
 ><a href="http://123.57.41.38:8080/game_center/#/" target="_blank">Library preview(old)</a>
-
 
 <br/>
 
@@ -180,7 +192,6 @@ Vue.component('Footer', Footer);
 <br/>
 
 
-<!--
-Preview of the rest of the components:
+
+As the official website is still under construction, you can briefly preview the following pictures
 ![Img](https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/preview.png)
--->

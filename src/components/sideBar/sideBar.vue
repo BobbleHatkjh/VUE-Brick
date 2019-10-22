@@ -186,7 +186,7 @@
         position: absolute;
         display: block;
         z-index: 2;
-        transition: width 350ms;
+        transition: width 300ms;
         height: 100%;
         width: 0;
         @include Theme-Bac($theme-color-green)
@@ -202,7 +202,7 @@
         width: 100%;
     }
     .left_frame_word a{
-        transition: color 350ms;
+        transition: color 300ms;
         margin: auto;
     }
 
