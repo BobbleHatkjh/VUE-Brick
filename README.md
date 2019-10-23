@@ -29,7 +29,7 @@
     
 _'Brick-Library' is a Vue component library_<br/>
 
-Do you find it too boring to write repetitive work when writing Vue projects? Every project has to write headers and footers repeatedly?<br/>
+Do you find it too boring to write repetitive work when writing Vue projects? <br/> Every project has to write headers and footers repeatedly?<br/>
 
 <!--
 
@@ -89,12 +89,12 @@ Now Brick-Library is fresh! You don't have to repeat many functional components 
 
 - Description File
     - [ ] Define Type Files
-    
+
+##
+
 <br/>
 
-
-
-### introduction of [import](/import/)
+### introduction of _import_
 
 >Few components - Recommended ways of import
 ```
