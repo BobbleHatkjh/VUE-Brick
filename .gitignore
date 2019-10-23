@@ -12,6 +12,5 @@ yarn-error.log*
 *.sln
 
 build/
-src/
 /node_modules/
 /dist/

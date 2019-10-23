@@ -1,0 +1,73 @@
+// 固定颜色版本
+$ThemeColor: #42b983; // #FB571F #fb99aa #27d0ff
+$BacColor: #000000;
+$ThemeBorder: 12px;
+
+
+
+
+// 更换主题版本
+$theme-color-green:#42b983;        /* 主题颜色   vue绿 */
+$theme-color-red: #fb7299;         /* 更换的颜色  B站粉 */
+$theme-color-blue: #1378ff;        /* 更换的颜色   */
+
+
+@mixin Theme-Fill($color,$op:0.8){    /*通过该函数设置字体颜色，后期方便统一管理；*/
+  fill : rgba($color,$op);
+  [data-theme="green"] & {fill: rgba($theme-color-green,$op)}
+  [data-theme="red"] & {fill: rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {fill: rgba($theme-color-blue,$op)}
+}
+
+@mixin Theme-Bac($color,$op:1){    /*通过该函数设置字体颜色，后期方便统一管理；*/
+  background-color : rgba($color,$op);
+  [data-theme="green"] & {background-color: rgba($theme-color-green,$op)}
+  [data-theme="red"] & {background-color: rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {background-color: rgba($theme-color-blue,$op)}
+}
+
+@mixin Theme-Color($color){
+  color : $color;
+  [data-theme="green"] & {color: $theme-color-green}
+  [data-theme="red"] & {color: $theme-color-red}
+  [data-theme="blue"] & {color: $theme-color-blue}
+}
+
+@mixin Theme-BoxShadow($cu,$color,$op:1){
+  box-shadow: 0 0 $cu rgba($color,$op);
+  [data-theme="green"] & {box-shadow: 0 0 $cu rgba($theme-color-green,$op);}
+  [data-theme="red"] & {box-shadow: 0 0 $cu rgba($theme-color-red,$op);}
+  [data-theme="blue"] & {box-shadow: 0 0 $cu rgba($theme-color-blue,$op);}
+}
+
+
+@mixin Theme-Border($cu,$color,$op:1) {
+  border: $cu solid rgba($color,$op);
+  [data-theme="green"] & {border:$cu solid rgba($theme-color-green,$op)}
+  [data-theme="red"] & {border:$cu solid rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {border:$cu solid rgba($theme-color-blue,$op)}
+}
+@mixin Theme-BorderLeft($cu,$color,$op:1) {
+  border-left: $cu solid rgba($color,$op);
+  [data-theme="green"] & {border-left:$cu solid rgba($theme-color-green,$op)}
+  [data-theme="red"] & {border-left:$cu solid rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {border-left:$cu solid rgba($theme-color-blue,$op)}
+}
+@mixin Theme-BorderRight($cu,$color,$op:1) {
+  border-right: $cu solid rgba($color,$op);
+  [data-theme="green"] & {border-right:$cu solid rgba($theme-color-green,$op)}
+  [data-theme="red"] & {border-right:$cu solid rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {border-right:$cu solid rgba($theme-color-blue,$op)}
+}
+@mixin Theme-BorderTop($cu,$color,$op:1) {
+  border-top: $cu solid rgba($color,$op);
+  [data-theme="green"] & {border-top:$cu solid rgba($theme-color-green,$op)}
+  [data-theme="red"] & {border-top:$cu solid rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {border-top:$cu solid rgba($theme-color-blue,$op)}
+}
+@mixin Theme-BorderBottom($cu,$color,$op:1) {
+  border-bottom: $cu solid rgba($color,$op);
+  [data-theme="green"] & {border-bottom:$cu solid rgba($theme-color-green,$op)}
+  [data-theme="red"] & {border-bottom:$cu solid rgba($theme-color-red,$op)}
+  [data-theme="blue"] & {border-bottom:$cu solid rgba($theme-color-blue,$op)}
+}
