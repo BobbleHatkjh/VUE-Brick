@@ -74,7 +74,7 @@
 
     export default {
         name: 'HeadBar',
-        props: ['logo','name','search','menuData','themeConfig','test'],
+        props: ['logo','name','search','menuData','themeConfig','account','test'],
         components: {
             Account
         },
