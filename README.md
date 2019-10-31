@@ -193,5 +193,6 @@ Vue.component('Footer', Footer);
 
 
 
+
 As the official website is still under construction, you can briefly preview the following pictures
 ![Img](https://raw.githubusercontent.com/BobbleHatkjh/Vue_BuildingBlock/master/pic/preview.png)
