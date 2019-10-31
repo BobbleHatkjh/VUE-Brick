@@ -59,6 +59,8 @@
                 </div>
             </div>
 
+            <!--  账户部分  -->
+            <Account :account="account" v-if="account"/>
 
         </div>
     </div>
@@ -68,10 +70,14 @@
 
 <script>
     import '../../styles/iconfont.js'
+    import Account from '../account/account.vue'
 
     export default {
         name: 'HeadBar',
         props: ['logo','name','search','menuData','themeConfig','test'],
+        components: {
+            Account
+        },
         data() {
             return {
                 router:[],

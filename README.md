@@ -58,7 +58,7 @@ Now Brick-Library is fresh! You don't have to repeat many functional components 
 
 - Components
     - [x] A
-    - [ ] Account module
+    - [x] Account module (In testing)
     - [x] Banner (In testing)
     - [x] Button
     - [x] Dot

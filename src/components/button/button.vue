@@ -8,7 +8,7 @@
                 v-if="b_type === 'default'"
                 :style="styles && styles"
                 :class="click_ && 'button_click'"
-                @click="buttonClick"
+                @click="buttonClick('default')"
         >
             <div class="b_button_slot">
                 <slot></slot>
@@ -22,7 +22,7 @@
                 v-if="b_type === 'primary'"
                 :style="styles && styles"
                 :class="click_ && 'button_click'"
-                @click="buttonClick"
+                @click="buttonClick('primary')"
         >
             <div class="b_button_slot">
                 <slot></slot>
@@ -30,7 +30,14 @@
         </div>
 
         <!-- danger -->
-        <div id="Button_dan" class="b_button_ _danger" v-if="b_type === 'danger'" :style="styles && styles" :class="click_ && 'button_click_dan'" @click="buttonClick">
+        <div
+                id="Button_dan"
+                class="b_button_ _danger"
+                v-if="b_type === 'danger'"
+                :style="styles && styles"
+                :class="click_ && 'button_click_dan'"
+                @click="buttonClick('danger')"
+        >
             <div class="b_button_slot">
                 <slot></slot>
             </div>
@@ -45,7 +52,7 @@
                 @mouseout="animate_show_ = !animate_show_"
                 :style="styles && styles"
                 :class="click_ && 'button_click'"
-                @click="buttonClick"
+                @click="buttonClick('animate')"
         >
             <div class="button_animate" :class="animate_show_ && 'button_animate_hover'">
 
@@ -82,12 +89,12 @@
 
             },
 
-            buttonClick(){
+            buttonClick(where){
                 this.click_ = true;
-                let that = this;
+                this.$emit('click',where); // @click
                 setTimeout(
-                    function(){
-                        that.click_ = false
+                    () => {
+                        this.click_ = false
                     }, 100
                 )
             }
