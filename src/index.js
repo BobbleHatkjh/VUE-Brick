@@ -1,3 +1,5 @@
+import main_js from './function/main.js'
+
 import b_a from './components/a/a.vue'
 import b_button from './components/button/button.vue'
 import b_footer from './components/footer/footer.vue'
@@ -31,4 +33,5 @@ export const TabBar = b_tab_bar;
 export const SideBar = b_side_bar;
 export const Dot = b_dot;
 
+export default main_js
 

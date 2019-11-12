@@ -21,7 +21,7 @@
         methods:{
             // 点击时的回调
             callBack_(){
-                this.$emit('return','click');
+                this.$emit('click','click');
             }
 
         },

@@ -81,7 +81,7 @@ Now Brick-Library is fresh! You don't have to repeat many functional components 
 - Global Function
     - [x] CSS Overall Control (In testing)
     - [ ] Parallax Effect 
-    - [ ] Test Mode 
+    - [x] Test Mode (In testing)
     - [x] Theme Configuration
     - [ ] iconFont library
 
